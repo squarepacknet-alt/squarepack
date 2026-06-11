@@ -1,0 +1,11 @@
+home - with animations, case studies, capabilities industries, contact ecses, certification column
+about - content
+product - product backend - order will be done by gmail or call
+service - hardcoded
+contact us - 
+testimonials - review form -- backend
+
+2 features for backend
+
+3 industries
+-- food and fmcg, cosmetic, healthcare

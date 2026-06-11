@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme inline {
+  --color-brand-light: #5ce7c8;
+  --color-brand: #26D0A8;
+  --color-brand-dark: #1ba988;
+
+  --color-primary-light: #334155;
+  --color-primary: #1B2A3D;
+  --color-primary-dark: #0F172A;
+
+  --color-surface-light: #FFFFFF;
+  --color-surface: #F8F9FA;
+  --color-surface-dark: #E2E8F0;
+
+  --color-body: #475569;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Configure tailwind typography to use our fonts */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  width: 100%;
+  max-width: 1320px;
+
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+  
+  @media (min-width: 1280px) {
+    padding-inline: 4rem;
+  }
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #1B2A3D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* For now, keeping a soft dark mode or sticking to light mode aesthetics. */
+    --background: #0F172A;
+    --foreground: #F8F9FA;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Hide scrollbar for all browsers */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+.font-arabic {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+/* RTL Specific Overrides if any */
+[dir="rtl"] .font-heading {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+input, textarea, select {
+  color: #0f172a;
+}

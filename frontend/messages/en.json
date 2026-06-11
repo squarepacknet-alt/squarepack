@@ -1,0 +1,657 @@
+{
+  "Navbar": {
+    "about": "About Us",
+    "products": "Products",
+    "industries": "Industries",
+    "contact": "Contact",
+    "testimonials": "Testimonials",
+    "bookDemo": "Book Demo",
+    "logo": "SQUAREPACK"
+  },
+  "Hero": {
+    "titleLine1": "Premium",
+    "titleLine2": "Packaging",
+    "titleLine3": "&",
+    "titleLine4": "Labeling",
+    "titleLine5": "Solutions",
+    "description": "Custom packaging designs and high-quality product labels that elevate your brand and captivate customers.",
+    "getStarted": "Get Started",
+    "viewWork": "View Our Work",
+    "stats": {
+      "projects": {
+        "value": "1,200+",
+        "label": "Projects Delivered"
+      },
+      "clients": {
+        "value": "200+",
+        "label": "Happy Clients"
+      },
+      "experience": {
+        "value": "8+",
+        "label": "Years Experience"
+      }
+    }
+  },
+  "Features": {
+    "title": "Why Choose SquarePack?",
+    "subtitle": "We combine engineering precision with artistic design to deliver packaging that performs and inspires.",
+    "items": [
+      {
+        "title": "In-House Production",
+        "description": "From design to delivery, everything handled under one roof for seamless quality control."
+      },
+      {
+        "title": "Premium Quality",
+        "description": "Using state-of-the-art printing technology and high-grade materials for superior brand identity."
+      },
+      {
+        "title": "Lightning Fast Delivery",
+        "description": "Express turnaround times and reliable logistics to keep production lines moving."
+      },
+      {
+        "title": "Eco-Friendly Solutions",
+        "description": "Commitment to sustainability through innovative, environmentally conscious packaging materials."
+      }
+    ],
+    "getQuote": "Get a Quote"
+  },
+  "Industries": {
+    "titlePrefix": "Industries",
+    "titleSuffix": "we serve",
+    "description": "Drag or swipe to explore our supported industries.",
+    "exploreMore": "Explore More",
+    "items": {
+      "devices": {
+        "title": "Devices & Instrumentation",
+        "desc": "We take pride in delivering precision-manufactured components for critical devices and instrumentation. Supporting innovation with reliable, high-tolerance machining."
+      },
+      "medical": {
+        "title": "Medical"
+      },
+      "robotics": {
+        "title": "Robotics"
+      },
+      "oilGas": {
+        "title": "Oil & Gas / Energy"
+      },
+      "automotive": {
+        "title": "Automotive"
+      },
+      "aerospace": {
+        "title": "Aerospace"
+      },
+      "defense": {
+        "title": "Defense"
+      },
+      "renewables": {
+        "title": "Renewables"
+      }
+    },
+    "metadata": {
+      "title": "Industries We Empower | SquarePack",
+      "description": "Discover how SquarePack delivers specialized packaging solutions across FMCG, Healthcare, Electronics, Beauty, and more."
+    },
+    "hero": {
+      "badge": "Specialized Expertise",
+      "title": "Industries We Empower",
+      "subtitle": "Trusted by leading brands across diverse sectors. We deliver heavily specialized packaging solutions with unmatched material expertise.",
+      "button": "Discuss Your Industry"
+    },
+    "stats": [
+      {
+        "value": "8+",
+        "label": "Global Sectors",
+        "desc": "Supported with tailored machinery."
+      },
+      {
+        "value": "1+",
+        "label": "Years Experience",
+        "desc": "Of industry leadership and iteration."
+      }
+    ],
+    "sectorsGrid": {
+      "title": "Sectors We Serve",
+      "subtitle": "Deep technical knowledge integrated across a vast matrix of highly specific commercial ecosystems."
+    },
+    "sectors": [
+      {
+        "title": "FMCG & Food",
+        "desc": "Labels and packaging solutions for consumer goods, food products, and beverages. From product branding to compliance labeling."
+      },
+      {
+        "title": "Healthcare & Pharmaceuticals",
+        "desc": "Regulatory-compliant labels for medicines, medical devices, and healthcare products. Temperature-resistant and tamper-evident options."
+      },
+      {
+        "title": "Electronics",
+        "desc": "Durable labels for electronic appliances, gadgets, and technical equipment. Heat-resistant and long-lasting adhesives."
+      },
+      {
+        "title": "Beauty & Cosmetics",
+        "desc": "Premium labels with vibrant colors and special finishes for cosmetics, personal care, and beauty products."
+      },
+      {
+        "title": "Home Care",
+        "desc": "Chemical-resistant labels for cleaning products, detergents, and household items. Waterproof and fade-resistant materials."
+      },
+      {
+        "title": "Industrial & Manufacturing",
+        "desc": "Heavy-duty labels for industrial equipment, machinery, and manufacturing processes. Extreme temperature and chemical resistant."
+      },
+      {
+        "title": "Logistics & Supply Chain",
+        "desc": "Shipping labels, barcode labels, and tracking solutions for warehouses, distribution centers, and logistics operations."
+      },
+      {
+        "title": "Retail & E-commerce",
+        "desc": "Custom product labels, price tags, and packaging materials for retail stores and online businesses."
+      }
+    ]
+  },
+  "BestSellers": {
+    "badge": "Signature Series",
+    "title": "Our Best Sellers",
+    "description": "Explore the packaging solutions chosen globally by industry leaders for their unparalleled reliability, durability, and premium aesthetics.",
+    "items": [
+      {
+        "id": "plain-labels",
+        "name": "Plain Labels",
+        "desc": "High-quality blank labels for thermal transfer and direct thermal printing.",
+        "tag": "Best Seller"
+      },
+      {
+        "id": "product-labels",
+        "name": "Product Labels",
+        "desc": "Custom full-color labels for branding and product identification.",
+        "tag": "Trending"
+      },
+      {
+        "id": "wax-ribbons",
+        "name": "Barcode Ribbons",
+        "desc": "Premium thermal transfer ribbons for crisp, durable barcode printing.",
+        "tag": "High Volume"
+      },
+      {
+        "id": "tamper-evident-labels",
+        "name": "Tamper-Evident Labels",
+        "desc": "Void labels that instantly reveal tampering — protecting your products and brand.",
+        "tag": "High Demand"
+      },
+      {
+        "id": "shrink-sleeve",
+        "name": "Shrink Sleeve Labels",
+        "desc": "360° full-body sleeves that conform to any container shape for premium shelf presence.",
+        "tag": "Popular"
+      },
+      {
+        "id": "holographic-labels",
+        "name": "Holographic Security Labels",
+        "desc": "Custom holographic stickers with serial numbers to eliminate counterfeiting.",
+        "tag": "Premium"
+      }
+    ]
+  },
+  "Certifications": {
+    "titlePrefix": "Why Choose",
+    "titleSuffix": "Us?",
+    "subtitle": "Committed to quality, innovation, and customer satisfaction.",
+    "items": [
+      {
+        "label": "Premium Quality",
+        "desc": "Reliable Products"
+      },
+      {
+        "label": "Eco-Conscious",
+        "desc": "Sustainable Practices"
+      },
+      {
+        "label": "Fast Delivery",
+        "desc": "On-Time Dispatch"
+      },
+      {
+        "label": "Custom Solutions",
+        "desc": "Tailored to Your Needs"
+      },
+      {
+        "label": "Dedicated Support",
+        "desc": "Customer First"
+      }
+    ]
+  },
+  "CaseStudies": {
+    "title": "Proven Results in Every Package.",
+    "subtitle": "See how we've helped leading brands transform their packaging strategy, optimize costs, and boost retail performance.",
+    "viewAll": "View All Case Studies",
+    "items": [
+      {
+        "metric": "+140%",
+        "metricDesc": "Shelf Visibility",
+        "title": "Elevating Artisan Coffee",
+        "client": "RoastMaster Co."
+      },
+      {
+        "metric": "45%",
+        "metricDesc": "Cost Reduction",
+        "title": "Optimized Logistics Packaging",
+        "client": "GlobalShip Tech"
+      },
+      {
+        "metric": "Zero",
+        "metricDesc": "Plastic Waste",
+        "title": "Fully Compostable Transition",
+        "client": "Natura Snacks"
+      }
+    ]
+  },
+  "Gallery": {
+    "items": [
+      {
+        "id": "packaging-products",
+        "title": "Retail Packaging",
+        "desc": "Custom designed cups and high-barrier pouches for fast-moving consumer goods."
+      },
+      {
+        "id": "shrink-sleeve-label",
+        "title": "Electronics Protection",
+        "desc": "Anti-static sealing for critical circuit boards and sensitive components."
+      },
+      {
+        "id": "product-labels",
+        "title": "Branded Shipping",
+        "desc": "Durable custom-printed tape and corrugate shipping boxes."
+      },
+      {
+        "id": "plain-labels",
+        "title": "Industrial Coatings",
+        "desc": "Heavy-duty surface protection wraps for automotive parts."
+      },
+      {
+        "id": "product-labels",
+        "title": "Cosmetics & Beauty",
+        "desc": "Premium jar branding and labels with soft-touch finishes."
+      },
+      {
+        "id": "shrink-sleeve-label",
+        "title": "Automated Wrapping",
+        "desc": "High-speed shrink film applications for mass manufacturing."
+      }
+    ]
+  },
+  "About": {
+    "metadata": {
+      "title": "About SquarePack | Premium Labels & Packaging Manufacturer in Dubai",
+      "description": "Discover SquarePack, a leading custom self-adhesive label and premium packaging manufacturer in Dubai, UAE. Learn about our advanced production, eco-friendly materials, and ISO-certified quality."
+    },
+    "hero": {
+      "title": "Elevating Brands Through Precision Labeling & Premium Packaging",
+      "p1": "SquarePack is UAE's leading provider of premium packaging and labeling solutions, serving diverse industries including FMCG, healthcare, electronics, and industrial sectors. With over 15 years of experience and a vision to transform the packaging industry, we have become a trusted partner across the UAE and the Middle East.",
+      "p2": "Our state-of-the-art facility combines advanced technology with skilled craftsmanship to produce labels, ribbons, packaging films, and specialized packaging products that meet international quality standards. We don't just supply products; we partner with our clients to understand their unique needs and deliver customized solutions that enhance their brand presence and operational efficiency.",
+      "mission": {
+        "title": "Our Mission",
+        "desc": "At Square Pack, our goal is to provide top-notch packaging and labeling solutions that assist businesses in differentiating themselves in a competitive market. We utilize innovative technology and artistic skill to craft safeguards for products while enhancing their aesthetic appeal and reinforcing brand recognition. We prioritize sustainability by providing environmentally-friendly materials and designs that minimize ecological footprint."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "desc": "At Square Pack, we envision transforming the packaging and labeling industry with creative, innovative, and environmentally friendly options. Our aim is to lead the way in revolutionizing how businesses present their products, elevating packaging to a key factor in brand identification and customer contentment. Our aim is to provide companies with packaging that not only protects their products but also enhances them, telling a story that resonates with consumers."
+      }
+    },
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Years of Excellence"
+      },
+      {
+        "value": "1,200+",
+        "label": "Projects Completed"
+      },
+      {
+        "value": "200+",
+        "label": "Active Corporate Clients"
+      },
+      {
+        "value": "25+",
+        "label": "Global Markets Served"
+      }
+    ],
+    "team": {
+      "title": "Meet Our Team",
+      "subtitle": "The talented people behind our success",
+      "members": [
+        {
+          "name": "Sarah Johnson",
+          "role": "CEO & Founder",
+          "desc": "Visionary leader with 15+ years in packaging innovation."
+        },
+        {
+          "name": "Michael Chen",
+          "role": "CTO",
+          "desc": "Tech expert passionate about cutting-edge manufacturing."
+        },
+        {
+          "name": "Emma Williams",
+          "role": "Head of Design",
+          "desc": "Creative director crafting beautiful user experiences."
+        },
+        {
+          "name": "David Martinez",
+          "role": "Head of Engineering",
+          "desc": "Engineering leader building scalable production systems."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Elevate Your Brand's Shelf Presence?",
+      "subtitle": "Partner with Dubai's leading label and packaging experts today. Let's engineer a solution tailored to your product line.",
+      "contactUs": "Contact Us",
+      "viewServices": "View Our Services"
+    }
+  },
+  "Contact": {
+    "metadata": {
+      "title": "Contact Us | SquarePack",
+      "description": "Get in touch with SquarePack. We'd love to hear from you and discuss your packaging needs."
+    },
+    "hero": {
+      "title": "Get In Touch",
+      "subtitle": "Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+    },
+    "info": {
+      "title": "Reach Out to Us",
+      "subtitle": "From brand owners seeking partnerships to operations managers wanting a smoother experience, our team is here and ready to connect.",
+      "email": {
+        "label": "Email Us",
+        "value1": "mohammed@squarepack.net",
+        "value2": "sales@squarepack.net"
+      },
+      "call": {
+        "label": "Call Us",
+        "value1": "+971 50 457 8900",
+        "value2": "+971 50 992 9801"
+      },
+      "visit": {
+        "label": "Visit Us",
+        "value": "Meydan freezone, Meydan road, Dubai, UAE"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "fields": {
+        "name": {
+          "label": "Full Name",
+          "placeholder": "Enter your full name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "sales@squarepack.net"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+1 (555) 123-4567"
+        },
+        "topic": {
+          "label": "Topic",
+          "placeholder": "Select your topic",
+          "options": [
+            "General Inquiry",
+            "Sales & Quotes",
+            "Partnerships"
+          ]
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Tell us about your project or how we can help!"
+        }
+      },
+      "submit": "Send Message"
+    }
+  },
+  "Testimonials": {
+    "metadata": {
+      "title": "Testimonials | SquarePack",
+      "description": "Hear what industry leaders say about SquarePack's premium packaging solutions."
+    },
+    "hero": {
+      "badge": "Client Stories",
+      "title": "Trusted by Industry Leaders",
+      "subtitle": "Real results from real partners. Here's what global brands have to say about working with SquarePack."
+    },
+    "stats": [
+      {
+        "label": "Client Reviews"
+      },
+      {
+        "label": "Average Rating"
+      },
+      {
+        "label": "Global Clients"
+      }
+    ],
+    "cta": {
+      "title": "Join Our Growing Network of Happy Clients",
+      "subtitle": "Ready to experience world-class packaging? Let's start with a conversation.",
+      "button": "Get In Touch"
+    },
+    "submitSection": {
+      "badge": "Share Your Story",
+      "title": "Were You a SquarePack Client?",
+      "subtitle": "We'd love to feature your experience. Fill out the form below and your review will be added to our collection."
+    },
+    "form": {
+      "success": {
+        "title": "Thank You!",
+        "desc": "Your testimonial has been received. We appreciate you sharing your experience with SquarePack!",
+        "button": "Submit Another"
+      },
+      "error": "Something went wrong. Please check that the server is running and try again.",
+      "fields": {
+        "name": {
+          "label": "Your Name *",
+          "placeholder": "e.g. Amanda Brooks"
+        },
+        "role": {
+          "label": "Your Role",
+          "placeholder": "e.g. Supply Chain Director"
+        },
+        "company": {
+          "label": "Company *",
+          "placeholder": "e.g. Natura Cosmetics"
+        },
+        "rating": {
+          "label": "Your Rating",
+          "options": [
+            "",
+            "Poor",
+            "Fair",
+            "Good",
+            "Great",
+            "Excellent!"
+          ]
+        },
+        "review": {
+          "label": "Your Review *",
+          "placeholder": "Share your experience working with SquarePack..."
+        }
+      },
+      "submit": "Submit Review"
+    }
+  },
+  "Products": {
+    "metadata": {
+      "title": "Products & Solutions | SquarePack",
+      "description": "Explore our range of premium packaging solutions from cosmetic jars to heavy-duty shipping."
+    },
+    "hero": {
+      "title": "Packaging Solutions",
+      "subtitle": "From concept to creation, we design packaging that protects your products and amplifies your brand."
+    },
+    "features": [
+      {
+        "title": "Custom Design",
+        "desc": "Unique packaging tailored to your brand and exact product specs."
+      },
+      {
+        "title": "Eco-Friendly Options",
+        "desc": "Sustainable materials that reduce environmental impact."
+      },
+      {
+        "title": "Product Protection",
+        "desc": "Durable packaging that keeps your products safe during shipping."
+      },
+      {
+        "title": "Premium Finishes",
+        "desc": "Embossing, foiling, and special coatings for a luxury feel."
+      }
+    ],
+    "categories": {
+      "title": "Packaging Categories",
+      "subtitle": "{count} solutions available — all customizable to your brand."
+    },
+    "cta": {
+      "title": "Let's Create Your Perfect Packaging",
+      "subtitle": "Our team is ready to bring your vision to life with custom packaging solutions.",
+      "button": "Request a Quote"
+    },
+    "fallbacks": [
+      {
+        "name": "Cosmetic & Beauty",
+        "desc": "Premium bottles, jars, and boxes for skincare, makeup, and personal care products.",
+        "category": "Beauty"
+      },
+      {
+        "name": "Food & Beverage",
+        "desc": "Safe, attractive packaging for food products, snacks, and beverages.",
+        "category": "Food"
+      },
+      {
+        "name": "Industrial Shipping",
+        "desc": "Maximum durability corrugate shipping boxes engineered for heavy cargo protection.",
+        "category": "Industrial"
+      }
+    ],
+    "tabs": {
+      "all": {
+        "title": "All Products",
+        "subtitle": "High Quality Labels"
+      },
+      "self-adhesive-products": {
+        "title": "Self Adhesive Products",
+        "subtitle": "High Quality Labels"
+      },
+      "security-labels": {
+        "title": "Security Labels",
+        "subtitle": "High Quality Labels"
+      },
+      "speciality-labels": {
+        "title": "Speciality Labels",
+        "subtitle": "High Quality Labels"
+      },
+      "printers": {
+        "title": "Printers",
+        "subtitle": "Specialized Solutions"
+      },
+      "packaging-products": {
+        "title": "Packaging Products",
+        "subtitle": "Specialized Solutions"
+      },
+      "pallet-bands": {
+        "title": "Pallet Bands",
+        "subtitle": "Specialized Solutions"
+      },
+      "barcode": {
+        "title": "Barcode Ribbons",
+        "subtitle": "Specialized Solutions"
+      }
+    },
+    "heroMain": {
+      "badge": "Premium Portfolio",
+      "title": "Our Product Portfolio",
+      "subtitle": "Comprehensive packaging and labeling solutions engineered for excellence across every industry."
+    },
+    "heroOther": {
+      "badge": "Specialized Solutions",
+      "title": "Other Products",
+      "subtitle": "Comprehensive range of specialized packaging and labeling solutions."
+    }
+  },
+  "Footer": {
+    "brandDescription": "Building innovative solutions for the digital age.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "careers": "Careers",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "rightsReserved": "© 2026 Squarepack All rights reserved.",
+    "contactInfo": {
+      "email1": "mohammed@squarepack.net",
+      "email2": "sales@squarepack.net",
+      "phone1": "+971 50 457 8900",
+      "phone2": "+971 50 992 9801",
+      "address": "Meydan freezone, Meydan road, Dubai, UAE"
+    }
+  },
+  "Common": {
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  },
+  "ProductDetailed": {
+    "title": "Our Products",
+    "subtitle": "Detailed showcase of our labeling and packaging solutions."
+  },
+  "ServiceDetailed": {
+    "title": "Our Expertise",
+    "subtitle": "Comprehensive packaging solutions tailored to your brand's unique needs.",
+    "hero": {
+      "badge": "Innovation & Quality",
+      "title": "Packaging Excellence",
+      "desc": "From initial concept to final delivery, we provide end-to-end services that ensure your products stand out and remain protected."
+    },
+    "core": {
+      "title": "Our Core Services",
+      "items": [
+        {
+          "title": "Custom Design",
+          "desc": "Bespoke structural and graphic design tailored to your product specs."
+        },
+        {
+          "title": "Premium Printing",
+          "desc": "High-fidelity offset and digital printing for vibrant, lasting colors."
+        },
+        {
+          "title": "Quality Assurance",
+          "desc": "Rigorous testing to ensure durability and brand consistency."
+        },
+        {
+          "title": "Supply Chain",
+          "desc": "Global logistics and inventory management for seamless delivery."
+        }
+      ]
+    },
+    "process": {
+      "title": "How We Work",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Strategy",
+          "desc": "We analyze your requirements and market trends."
+        },
+        {
+          "num": "02",
+          "title": "Design",
+          "desc": "Prototyping and material selection for optimal results."
+        },
+        {
+          "num": "03",
+          "title": "Production",
+          "desc": "Manufacturing using state-of-the-art machinery."
+        },
+        {
+          "num": "04",
+          "title": "Delivery",
+          "desc": "Timed logistics to meet your production deadlines."
+        }
+      ]
+    }
+  }
+}
