@@ -24,6 +24,8 @@ class LocalizedProduct(BaseModel):
     id: str
     name: str
     desc: str
+    name_en: Optional[str] = None
+    desc_en: Optional[str] = None
     image_url: Optional[str]
     tag: Optional[str]
     category: str

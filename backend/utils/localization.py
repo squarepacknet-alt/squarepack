@@ -11,6 +11,8 @@ def localize_product(p: DBProduct, lang: str) -> LocalizedProduct:
         id=p.id,
         name=(p.name_ar if p.name_ar else p.name) if is_ar else p.name,
         desc=(p.desc_ar if p.desc_ar else p.desc) if is_ar else p.desc,
+        name_en=p.name,
+        desc_en=p.desc,
         image_url=p.image_url,
         tag=(p.tag_ar if p.tag_ar else p.tag) if is_ar else p.tag,
         category=(

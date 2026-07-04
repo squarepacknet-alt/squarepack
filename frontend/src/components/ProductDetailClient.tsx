@@ -17,6 +17,8 @@ interface Product {
   id: string;
   name: string;
   desc: string;
+  name_en?: string | null;
+  desc_en?: string | null;
   image_url: string | null;
   tag: string | null;
   category: string;
@@ -152,10 +154,16 @@ export default function ProductDetailClient({ product, locale }: { product: Prod
 
             <h1 className="text-4xl lg:text-5xl font-heading font-black text-slate-900 mb-6 leading-tight">
               {product.name}
+              {locale === "ar" && product.name_en && product.name_en !== product.name && (
+                <span className="block text-xl lg:text-2xl font-medium text-slate-500 mt-2">{product.name_en}</span>
+              )}
             </h1>
             
             <p className="text-slate-600 text-[16px] leading-relaxed mb-8">
               {product.desc}
+              {locale === "ar" && product.desc_en && product.desc_en !== product.desc && (
+                <span className="block text-sm text-slate-400 mt-2 border-t border-slate-100 pt-2">{product.desc_en}</span>
+              )}
             </p>
 
             {/* Quick Specifications */}
