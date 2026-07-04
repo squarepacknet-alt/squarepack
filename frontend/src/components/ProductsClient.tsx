@@ -11,7 +11,7 @@ import {
   Barcode,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import ProductCard from "@/components/ProductCard";
+import ProductShowcase from "@/components/ProductShowcase";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import AppButton from "./appButton/AppButton";
@@ -326,29 +326,10 @@ export default function ProductsClient({
               transition={{ duration: 0.4 }}
               className="flex flex-col items-center w-full"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-                {filteredProducts.slice(0, visibleCount).map((product, idx) => {
-                  return (
-                    <motion.div
-                      key={product.id}
-                      initial={{ opacity: 0, y: 24 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: (idx % 10) * 0.06 }}
-                    >
-                      <ProductCard
-                        id={product.id}
-                        name={product.name}
-                        desc={product.desc}
-                        tag={product.tag}
-                        image={product.image_url || undefined}
-                        category={product.category}
-                        index={idx}
-                        variant="list"
-                      />
-                    </motion.div>
-                  );
-                })}
-              </div>
+              <ProductShowcase
+                products={filteredProducts.slice(0, visibleCount)}
+                columns={3}
+              />
 
               {visibleCount < filteredProducts.length && (
                 <motion.div

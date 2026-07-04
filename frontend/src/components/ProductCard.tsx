@@ -45,17 +45,17 @@ export default function ProductCard({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
-        className="group relative h-[420px] lg:h-[480px] rounded-[32px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+        className="group relative h-[420px] lg:h-[480px] rounded-[32px] overflow-hidden bg-[#1A1A1A] shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
       >
         <Link href={href} className="absolute inset-0 z-20" aria-label={`View details for ${name}`} />
-        
+
         {/* Background Image */}
         {image ? (
           <Image
             src={image}
             alt={name}
             fill
-            className="object-cover transition-transform duration-1000 group-hover:scale-110"
+            className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-0"
           />
         ) : (
           <div
@@ -68,7 +68,7 @@ export default function ProductCard({
         <div className="absolute inset-0 bg-[#28b098]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Content */}
-        <div className="absolute inset-0 p-8 flex flex-col justify-end text-left rtl:text-right">
+        <div className="absolute inset-0 p-8 flex flex-col justify-end group-hover:justify-start transition-all duration-500 text-left rtl:text-right">
           {/* Tag */}
           {tag && (
             <motion.div
@@ -91,7 +91,7 @@ export default function ProductCard({
           {/* Description & CTA - Revealed on hover with height transition */}
           <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out overflow-hidden">
             <div className="min-h-0">
-              <p className="text-white/70 text-[15px] lg:text-[16px] leading-relaxed mb-6 mt-2 line-clamp-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+              <p className="text-white/70 text-[15px] lg:text-[16px] leading-relaxed mb-6 mt-2 line-clamp-3 group-hover:line-clamp-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                 {desc}
               </p>
 
@@ -117,13 +117,13 @@ export default function ProductCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group flex flex-col rounded-[24px] overflow-hidden bg-white border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative cursor-pointer"
+      className="group flex flex-col h-[500px] rounded-[24px] overflow-hidden bg-white border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative cursor-pointer"
     >
       <Link href={href} className="absolute inset-0 z-20" aria-label={`View details for ${name}`} />
-      
+
       {/* Visual Area */}
       <div
-        className={`w-full h-[240px] md:h-[280px] relative ${placeholder || 'bg-slate-100'} overflow-hidden`}
+        className={`w-full h-[240px] md:h-[280px] group-hover:h-0 group-hover:opacity-0 transition-all duration-500 relative ${placeholder || 'bg-slate-100'} overflow-hidden`}
       >
         {image && (
           <Image
@@ -156,7 +156,7 @@ export default function ProductCard({
         <h3 className="text-[22px] md:text-[24px] font-heading font-bold text-white mb-3 transition-colors group-hover:text-[#3de0be]">
           {name}
         </h3>
-        <p className="text-white/60 text-[15px] leading-relaxed mb-6 line-clamp-2 group-hover:text-white/80 transition-colors">
+        <p className="text-white/60 text-[15px] leading-relaxed mb-6 line-clamp-2 group-hover:line-clamp-none group-hover:text-white/80 transition-colors">
           {desc}
         </p>
 
