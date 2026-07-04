@@ -25,6 +25,21 @@ class ProductService:
 
         return [localize_product(p, lang) for p in products]
 
+    def get_best_sellers(
+        self,
+        lang: str = "en",
+        all: bool = False,
+    ):
+
+        products = self.db.query(DBProduct).filter(
+            (DBProduct.tag.ilike("%Best Seller%")) | (DBProduct.tag.ilike("%BestSeller%"))
+        ).all()
+
+        if all:
+            return products
+
+        return [localize_product(p, lang) for p in products]
+
     def get_by_id(
         self,
         product_id: str,

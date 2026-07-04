@@ -29,7 +29,6 @@ CATEGORY_IMAGE = (
 )
 
 products = [
-
     # ── 1. Void Labels ───────────────────────────────────────────────────────
     {
         "id":      "void-labels",
@@ -48,7 +47,7 @@ products = [
         ),
         "tag":     "Security",
         "tag_ar":  "أمان",
-        "image_url": "https://images.surferseo.art/a13ff2cf-3cf3-47d7-bc4a-981d7d9c6420.jpeg",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/void-labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Tamper Pattern",    "value": "VOID, Checkerboard, Custom Text/Logo"},
@@ -129,7 +128,7 @@ products = [
         ),
         "tag":     None,
         "tag_ar":  None,
-        "image_url": "https://5.imimg.com/data5/SELLER/Default/2023/6/317290030/DL/LX/AC/8217514/paper-garment-barcode-stickers.jpg",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/RFID%20tags.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Frequency",         "value": "UHF 860–960 MHz, HF 13.56 MHz, NFC"},
@@ -213,7 +212,7 @@ products = [
         ),
         "tag":     None,
         "tag_ar":  None,
-        "image_url": "https://images.unsplash.com/photo-1647815567270-2f2fb94fc532?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/RFID%20labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Frequency",         "value": "UHF 860–960 MHz / HF 13.56 MHz"},
@@ -277,7 +276,7 @@ products = [
 
     # ── 4. Asset Labels (Security) ───────────────────────────────────────────
     {
-        "id":      "asset-labels-security",
+        "id":      "asset-labels",
         "name":    "Asset Labels",
         "name_ar": "ملصقات الأصول",
         "desc": (
@@ -355,87 +354,7 @@ products = [
         },
     },
 
-    # ── 5. Tamper Evident Labels ─────────────────────────────────────────────
-    {
-        "id":      "tamper-evident-labels",
-        "name":    "Tamper Evident Labels",
-        "name_ar": "ملصقات مقاومة العبث",
-        "desc": (
-            "Specialised labels that provide visible evidence of tampering, "
-            "ensuring product integrity throughout the supply chain. "
-            "Engineered with multiple security layers – from void patterns and "
-            "destructible face stocks to holographic overlaminates – these labels "
-            "deliver unambiguous proof of interference at every stage of distribution."
-        ),
-        "desc_ar": (
-            "ملصقات متخصصة توفر دليلاً مرئياً على العبث، مما يضمن سلامة المنتج "
-            "في جميع أنحاء سلسلة التوريد."
-        ),
-        "tag":     "Security",
-        "tag_ar":  "أمان",
-        "image_url": "https://images.unsplash.com/photo-1776241732359-e283bf413901?q=80&w=1423&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "details": {
-            "quick_specs": [
-                {"label": "Tamper Methods",    "value": "VOID residue, Destructible face, Holographic, Brittle"},
-                {"label": "Material",          "value": "PET, Destructible vinyl, Holographic PET, Paper"},
-                {"label": "Security Level",    "value": "Level 1 (covert) to Level 3 (overt + covert)"},
-                {"label": "Adhesive",          "value": "Aggressive permanent, surface-marking"},
-                {"label": "Custom Options",    "value": "Logo, serial number, hologram, UV ink"},
-            ],
-            "features": [
-                {"title": "Multi-layer security: void residue + destructible substrate + holographic overlam"},
-                {"title": "Covert UV-fluorescent ink features visible only under UV light"},
-                {"title": "Overt holographic elements with custom-designed secure patterns"},
-                {"title": "Brittle face stock that shatters on removal – impossible to transfer intact"},
-                {"title": "Sequential numbering and barcodes for audit trail documentation"},
-                {"title": "Heat and cold-resistant formulations for pharmaceutical cold-chain"},
-                {"title": "Tailored security levels: cosmetic, moderate, or high-security specification"},
-            ],
-            "specifications": [
-                {"label": "Face Stock",        "value": "38–80 µm PET / destructible vinyl / holographic PET"},
-                {"label": "Security Layers",   "value": "Up to 4 (face + adhesive + residue + overlaminate)"},
-                {"label": "UV Ink",            "value": "Optional covert UV-reactive feature"},
-                {"label": "Hologram Type",     "value": "Standard DOVIDs or custom-branded masterwork"},
-                {"label": "Temp. Range",       "value": "-25 °C to +90 °C"},
-                {"label": "Peel Strength",     "value": "≥ 20 N/25 mm on stainless steel"},
-                {"label": "Sizes",             "value": "20×10 mm to 200×100 mm (custom available)"},
-            ],
-            "applications": [
-                {"title": "Pharmaceutical blister packs and bottle neck seals"},
-                {"title": "Food and beverage cap seals and freshness indicators"},
-                {"title": "Cosmetics and luxury goods anti-counterfeiting"},
-                {"title": "Electronic component and PCB board seals"},
-                {"title": "Legal and government document seals"},
-                {"title": "Customs and logistics carton seals"},
-                {"title": "Insurance and warranty void seals for durable goods"},
-            ],
-        },
-        "details_ar": {
-            "quick_specs": [
-                {"label": "طرق مقاومة العبث",  "value": "بقايا VOID، وجه قابل للتدمير، هولوغرافي، هش"},
-                {"label": "المادة",            "value": "PET، فينيل قابل للتدمير، PET هولوغرافي، ورق"},
-                {"label": "مستوى الأمان",      "value": "مستوى 1 (خفي) إلى مستوى 3 (ظاهر + خفي)"},
-            ],
-            "features": [
-                {"title": "أمان متعدد الطبقات: بقايا void + ركيزة قابلة للتدمير + طلاء هولوغرافي"},
-                {"title": "حبر UV-فلوري خفي مرئي فقط تحت ضوء الأشعة فوق البنفسجية"},
-                {"title": "عناصر هولوغرافية ظاهرة بأنماط أمان مخصصة"},
-                {"title": "ترقيم تسلسلي وباركود لتوثيق مسار التدقيق"},
-            ],
-            "specifications": [
-                {"label": "طبقات الأمان",      "value": "حتى 4 طبقات"},
-                {"label": "نطاق الحرارة",      "value": "-25 °C إلى +90 °C"},
-            ],
-            "applications": [
-                {"title": "أختام عنق زجاجات الأدوية وألواح النفطة"},
-                {"title": "أختام غطاء المنتجات الغذائية والمشروبات"},
-                {"title": "مكافحة التزوير في مستحضرات التجميل والسلع الفاخرة"},
-                {"title": "أختام المستندات القانونية والحكومية"},
-            ],
-        },
-    },
-
-    # ── 6. Custom Asset Labels ───────────────────────────────────────────────
+    # ── 5. Custom Asset Labels ───────────────────────────────────────────────
     {
         "id":      "custom-asset-labels",
         "name":    "Custom Asset Labels",
@@ -453,7 +372,7 @@ products = [
         ),
         "tag":     None,
         "tag_ar":  None,
-        "image_url": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/ff628424-7e42-4659-b494-4db1f5ccb618.__CR0,0,300,300_PT0_SX300_V1___.jpg",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/custom-asset-labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Customisation",     "value": "Logo, colour, serial, barcode, QR, UID, NFC"},
@@ -514,6 +433,85 @@ products = [
                 {"title": "إدارة المرافق – الأثاث والتجهيزات والمعدات"},
                 {"title": "تتبع صيانة المعدات الطبية الحيوية"},
                 {"title": "تسميات فحص الأصول الميدانية في النفط والغاز والمرافق"},
+            ],
+        },
+    },
+    # ── 6. Tamper Evident Labels ─────────────────────────────────────────────
+    {
+        "id":      "tamper-evident-labels",
+        "name":    "Tamper Evident Labels",
+        "name_ar": "ملصقات مقاومة العبث",
+        "desc": (
+            "Specialised labels that provide visible evidence of tampering, "
+            "ensuring product integrity throughout the supply chain. "
+            "Engineered with multiple security layers – from void patterns and "
+            "destructible face stocks to holographic overlaminates – these labels "
+            "deliver unambiguous proof of interference at every stage of distribution."
+        ),
+        "desc_ar": (
+            "ملصقات متخصصة توفر دليلاً مرئياً على العبث، مما يضمن سلامة المنتج "
+            "في جميع أنحاء سلسلة التوريد."
+        ),
+        "tag":     "Security",
+        "tag_ar":  "أمان",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/Tamper%20evident%20labels.jpg",
+        "details": {
+            "quick_specs": [
+                {"label": "Tamper Methods",    "value": "VOID residue, Destructible face, Holographic, Brittle"},
+                {"label": "Material",          "value": "PET, Destructible vinyl, Holographic PET, Paper"},
+                {"label": "Security Level",    "value": "Level 1 (covert) to Level 3 (overt + covert)"},
+                {"label": "Adhesive",          "value": "Aggressive permanent, surface-marking"},
+                {"label": "Custom Options",    "value": "Logo, serial number, hologram, UV ink"},
+            ],
+            "features": [
+                {"title": "Multi-layer security: void residue + destructible substrate + holographic overlam"},
+                {"title": "Covert UV-fluorescent ink features visible only under UV light"},
+                {"title": "Overt holographic elements with custom-designed secure patterns"},
+                {"title": "Brittle face stock that shatters on removal – impossible to transfer intact"},
+                {"title": "Sequential numbering and barcodes for audit trail documentation"},
+                {"title": "Heat and cold-resistant formulations for pharmaceutical cold-chain"},
+                {"title": "Tailored security levels: cosmetic, moderate, or high-security specification"},
+            ],
+            "specifications": [
+                {"label": "Face Stock",        "value": "38–80 µm PET / destructible vinyl / holographic PET"},
+                {"label": "Security Layers",   "value": "Up to 4 (face + adhesive + residue + overlaminate)"},
+                {"label": "UV Ink",            "value": "Optional covert UV-reactive feature"},
+                {"label": "Hologram Type",     "value": "Standard DOVIDs or custom-branded masterwork"},
+                {"label": "Temp. Range",       "value": "-25 °C to +90 °C"},
+                {"label": "Peel Strength",     "value": "≥ 20 N/25 mm on stainless steel"},
+                {"label": "Sizes",             "value": "20×10 mm to 200×100 mm (custom available)"},
+            ],
+            "applications": [
+                {"title": "Pharmaceutical blister packs and bottle neck seals"},
+                {"title": "Food and beverage cap seals and freshness indicators"},
+                {"title": "Cosmetics and luxury goods anti-counterfeiting"},
+                {"title": "Electronic component and PCB board seals"},
+                {"title": "Legal and government document seals"},
+                {"title": "Customs and logistics carton seals"},
+                {"title": "Insurance and warranty void seals for durable goods"},
+            ],
+        },
+        "details_ar": {
+            "quick_specs": [
+                {"label": "طرق مقاومة العبث",  "value": "بقايا VOID، وجه قابل للتدمير، هولوغرافي، هش"},
+                {"label": "المادة",            "value": "PET، فينيل قابل للتدمير، PET هولوغرافي، ورق"},
+                {"label": "مستوى الأمان",      "value": "مستوى 1 (خفي) إلى مستوى 3 (ظاهر + خفي)"},
+            ],
+            "features": [
+                {"title": "أمان متعدد الطبقات: بقايا void + ركيزة قابلة للتدمير + طلاء هولوغرافي"},
+                {"title": "حبر UV-فلوري خفي مرئي فقط تحت ضوء الأشعة فوق البنفسجية"},
+                {"title": "عناصر هولوغرافية ظاهرة بأنماط أمان مخصصة"},
+                {"title": "ترقيم تسلسلي وباركود لتوثيق مسار التدقيق"},
+            ],
+            "specifications": [
+                {"label": "طبقات الأمان",      "value": "حتى 4 طبقات"},
+                {"label": "نطاق الحرارة",      "value": "-25 °C إلى +90 °C"},
+            ],
+            "applications": [
+                {"title": "أختام عنق زجاجات الأدوية وألواح النفطة"},
+                {"title": "أختام غطاء المنتجات الغذائية والمشروبات"},
+                {"title": "مكافحة التزوير في مستحضرات التجميل والسلع الفاخرة"},
+                {"title": "أختام المستندات القانونية والحكومية"},
             ],
         },
     },

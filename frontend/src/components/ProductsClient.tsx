@@ -78,8 +78,6 @@ export default function ProductsClient({
           return categoryLower.includes("packaging-products");
         case "barcode":
           return categoryLower.includes("barcode");
-        case "pallet-bands":
-          return categoryLower.includes("pallet-bands");
         case "other":
           return (
             categoryLower.includes("other") || categoryLower === "specialized"
@@ -127,12 +125,6 @@ export default function ProductsClient({
       icon: Package,
       label: t("tabs.packaging-products.title"),
       subtitle: t("tabs.packaging-products.subtitle"),
-    },
-    {
-      id: "pallet-bands",
-      icon: Package,
-      label: t("tabs.pallet-bands.title"),
-      subtitle: t("tabs.pallet-bands.subtitle"),
     },
     {
       id: "barcode",

@@ -44,7 +44,7 @@ products = [
         ),
         "tag":      "Best Seller",
         "tag_ar":   "الأكثر مبيعاً",
-        "image_url": "https://images.jdmagicbox.com/comp/daman/r4/9999px260.x260.161224183007.n3r4/catalogue/zeden-automations-systems-dabhel-daman-barcode-sticker-dealers-ws7y5qthfa.jpg",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/plain-labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Material Options",  "value": "Paper, Polypropylene (PP), Polyester (PET), Vinyl"},
@@ -127,7 +127,7 @@ products = [
         ),
         "tag":      "Trending",
         "tag_ar":   "رائج",
-        "image_url": "https://images.unsplash.com/photo-1763668444855-401b58dceb20?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/customizable%20labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Print Process",     "value": "Digital, Flexo, Offset, Screen"},
@@ -206,7 +206,7 @@ products = [
         ),
         "tag":      None,
         "tag_ar":   None,
-        "image_url": "https://plus.unsplash.com/premium_photo-1752230474246-95d49be14a23?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/promotional%20labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Special Effects",   "value": "Scratch-off, Peel-reveal, Holographic, Fluorescent"},
@@ -276,7 +276,7 @@ products = [
         ),
         "tag":      "High Volume",
         "tag_ar":   "حجم كبير",
-        "image_url": "https://plus.unsplash.com/premium_photo-1665203571426-9d1c5809a2ad?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/barcode%20labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Barcode Standards",  "value": "GS1-128, Code 39, Code 128, EAN-13, QR, DataMatrix"},
@@ -349,7 +349,7 @@ products = [
         ),
         "tag":      None,
         "tag_ar":   None,
-        "image_url": "https://images.unsplash.com/photo-1605718317361-f9326fd262ca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/shrink%20sleeves%20labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Film Materials",    "value": "PVC, PETG, OPS, PLA (eco-friendly)"},
@@ -401,81 +401,6 @@ products = [
                 {"title": "حاويات العناية الشخصية ومستحضرات التجميل"},
                 {"title": "زجاجات منتجات التنظيف المنزلي"},
                 {"title": "تأمين زجاجات الأدوية ضد العبث"},
-            ],
-        },
-    },
-
-    # ── 6. Masking Tape ──────────────────────────────────────────────────────
-    {
-        "id":       "masking-tape",
-        "name":     "Masking Tape",
-        "name_ar":  "شريط الإخفاء",
-        "desc":     (
-            "Durable, easy-tear masking tapes suitable for painting, bundling, "
-            "and general-purpose industrial or office use. Engineered with a "
-            "conformable crepe backing and a clean-release adhesive system that "
-            "leaves no residue on sensitive surfaces."
-        ),
-        "desc_ar":  (
-            "أشرطة إخفاء متينة وسهلة التمزيق مناسبة للطلاء والتجميع "
-            "والاستخدام الصناعي والمكتبي متعدد الأغراض."
-        ),
-        "tag":      None,
-        "tag_ar":   None,
-        "image_url": "https://images.unsplash.com/photo-1511285547760-79b561563b35?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "details": {
-            "quick_specs": [
-                {"label": "Backing",           "value": "Crepe paper, Flatback paper, Washi"},
-                {"label": "Adhesive",          "value": "Natural rubber, Acrylic"},
-                {"label": "Width Range",       "value": "6 mm – 100 mm"},
-                {"label": "Temperature Rating","value": "Up to 120 °C (60 min dwell)"},
-                {"label": "Residue",           "value": "Clean removal up to 7 days"},
-            ],
-            "features": [
-                {"title": "Conformable crepe backing tears cleanly by hand – no tools needed"},
-                {"title": "Clean-release adhesive leaves zero residue on paint, glass, and trim"},
-                {"title": "Heat-resistant up to 120 °C for oven and automotive paint applications"},
-                {"title": "UV-resistant variants available for outdoor masking up to 30 days"},
-                {"title": "High elongation for masking curved surfaces, mouldings, and profiles"},
-                {"title": "Available in general-purpose, medium, and high-temp performance grades"},
-                {"title": "Custom widths and core sizes for automated dispensing equipment"},
-            ],
-            "specifications": [
-                {"label": "Backing Type",      "value": "Crepe paper (standard) / Flatback / Washi"},
-                {"label": "Adhesive Type",     "value": "Natural rubber resin / Acrylic"},
-                {"label": "Thickness",         "value": "130 – 185 µm (backing + adhesive)"},
-                {"label": "Tensile Strength",  "value": "≥ 50 N/25 mm"},
-                {"label": "Elongation",        "value": "8 – 14 %"},
-                {"label": "Temp. Resistance",  "value": "Up to 80 °C (standard) / 120 °C (high-temp)"},
-                {"label": "Widths Available",  "value": "6, 9, 12, 18, 24, 36, 48, 72, 100 mm"},
-            ],
-            "applications": [
-                {"title": "Automotive and industrial spray painting"},
-                {"title": "Interior decoration and wall painting"},
-                {"title": "PCB and electronics protection during soldering"},
-                {"title": "Bundling, holding, and splicing in manufacturing"},
-                {"title": "Office general-purpose fixing and labeling"},
-                {"title": "Carpentry and woodworking surface protection"},
-            ],
-        },
-        "details_ar": {
-            "quick_specs": [
-                {"label": "الدعامة",           "value": "ورق مجعد، ورق مسطح، واشي"},
-                {"label": "اللاصق",            "value": "مطاط طبيعي، أكريليك"},
-                {"label": "نطاق العرض",        "value": "6 ملم – 100 ملم"},
-                {"label": "درجة الحرارة",      "value": "حتى 120 درجة مئوية"},
-            ],
-            "features": [
-                {"title": "دعامة ورق مجعد تتمزق بيسر باليد دون أدوات"},
-                {"title": "لاصق نظيف الإزالة لا يترك أثراً على الطلاء والزجاج"},
-                {"title": "مقاوم للحرارة حتى 120 درجة مئوية لتطبيقات طلاء السيارات"},
-                {"title": "خيارات مقاومة للأشعة فوق البنفسجية للإخفاء الخارجي"},
-            ],
-            "applications": [
-                {"title": "طلاء بالرش للسيارات والصناعة"},
-                {"title": "الديكور الداخلي وطلاء الجدران"},
-                {"title": "حماية ألواح الدوائر الإلكترونية أثناء اللحام"},
-                {"title": "التجميع والتثبيت في التصنيع"},
             ],
         },
     },

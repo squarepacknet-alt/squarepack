@@ -29,10 +29,6 @@ const productCategories: ProductCategory[] = [
         name: "Shrink Sleeve Labels",
         slug: "shrink-sleeve-labels",
       },
-      {
-        name: "Masking Tape",
-        slug: "masking-tape",
-      },
     ],
   },
   {
@@ -56,12 +52,12 @@ const productCategories: ProductCategory[] = [
         slug: "asset-labels-security",
       },
       {
-        name: "Tamper Evident Labels",
-        slug: "tamper-evident-labels",
-      },
-      {
         name: "Custom Asset Labels",
         slug: "custom-asset-labels",
+      },
+      {
+        name: "Tamper Evident Labels",
+        slug: "tamper-evident-labels",
       },
     ],
   },
@@ -69,10 +65,6 @@ const productCategories: ProductCategory[] = [
     title: "Speciality Labels",
     categorySlug: "speciality-labels",
     items: [
-      {
-        name: "Asset Labels",
-        slug: "asset-labels-speciality",
-      },
       {
         name: "Rack Labels",
         slug: "rack-labels",
@@ -87,7 +79,7 @@ const productCategories: ProductCategory[] = [
       },
       {
         name: "Warehouse solutions",
-        slug: "washing-care-labels",
+        slug: "warehouse-solutions",
       },
       {
         name: "POS Rolls",
@@ -108,16 +100,12 @@ const productCategories: ProductCategory[] = [
     categorySlug: "printers",
     items: [
       {
-        name: "Printing",
-        slug: "printing",
+        name: "Printer",
+        slug: "printer",
       },
       {
-        name: "Pricing Care",
-        slug: "print-care",
-      },
-      {
-        name: "Labels",
-        slug: "labels-printers",
+        name: "Pricing Slide Gum",
+        slug: "pricing-slide-gum",
       },
     ],
   },
@@ -128,6 +116,10 @@ const productCategories: ProductCategory[] = [
       {
         name: "Brown Tapes",
         slug: "brown-tapes",
+      },
+      {
+        name: "Masking Tape",
+        slug: "masking-tape",
       },
       {
         name: "Clear Tapes",

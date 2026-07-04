@@ -27,85 +27,7 @@ CATEGORY_IMAGE = "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q
 
 products = [
 
-    # ── 1. Asset Labels ──────────────────────────────────────────────────────
-    {
-        "id": "asset-labels",
-        "name": "Asset Labels",
-        "name_ar": "ملصقات الأصول",
-        "desc": (
-            "Durable, tamper-evident asset tracking labels designed for long-term "
-            "identification of IT equipment, machinery, tools, and office furniture. "
-            "Engineered to resist chemicals, abrasion, and extreme temperatures "
-            "while maintaining barcode scan quality throughout the asset's lifecycle."
-        ),
-        "desc_ar": (
-            "ملصقات تتبع أصول متينة ومقاومة للعبث مصممة لتحديد هوية معدات تكنولوجيا المعلومات "
-            "والآلات والأدوات وأثاث المكتب على المدى الطويل."
-        ),
-        "tag": "Best Seller",
-        "tag_ar": "الأكثر مبيعاً",
-        "image_url": "https://images.unsplash.com/photo-1605192020788-24d8eae86e59?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "details": {
-            "quick_specs": [
-                {"label": "Material Options", "value": "Polyester (PET), Polyimide, Vinyl, Aluminum"},
-                {"label": "Adhesive Type", "value": "Permanent High-Tack, Tamper-Evident"},
-                {"label": "Temperature Range", "value": "-40°C to +150°C"},
-                {"label": "Durability", "value": "5+ years outdoor / 10+ years indoor"},
-                {"label": "Finish Options", "value": "Matte, Gloss, Brushed Metal"},
-            ],
-            "features": [
-                {"title": "Tamper-evident construction – labels fragment upon removal attempt"},
-                {"title": "Chemical and solvent-resistant face stocks for industrial environments"},
-                {"title": "High-tack permanent adhesive bonds to low-surface-energy plastics"},
-                {"title": "Thermal transfer printable with excellent barcode edge definition"},
-                {"title": "Ultra-thin construction prevents edge lifting on curved surfaces"},
-                {"title": "Custom serialization and QR codes for digital asset management"},
-                {"title": "UV-stable materials prevent yellowing and cracking over time"},
-            ],
-            "specifications": [
-                {"label": "Material Thickness", "value": "25 – 75 µm (face stock)"},
-                {"label": "Adhesion Strength", "value": "≥ 25 N/25 mm (stainless steel)"},
-                {"label": "Print Method", "value": "Thermal Transfer (Resin Ribbon Recommended)"},
-                {"label": "Resistance", "value": "Oil, grease, solvents, UV, abrasion"},
-                {"label": "Certification", "value": "RoHS, REACH compliant"},
-                {"label": "Colors Available", "value": "White, Silver, Yellow, Red, Custom"},
-            ],
-            "applications": [
-                {"title": "IT asset tracking – laptops, servers, monitors, peripherals"},
-                {"title": "Factory machinery and equipment identification"},
-                {"title": "Tool crib and inventory management systems"},
-                {"title": "Office furniture and fixture labeling"},
-                {"title": "Medical device and laboratory equipment tracking"},
-                {"title": "Vehicle fleet and heavy equipment identification"},
-            ],
-        },
-        "details_ar": {
-            "quick_specs": [
-                {"label": "خيارات المادة", "value": "بوليستر، بولي إيميد، فينيل، ألومنيوم"},
-                {"label": "نوع اللاصق", "value": "عالية الالتصاق دائم، مقاوم للعبث"},
-                {"label": "نطاق درجة الحرارة", "value": "-40 درجة مئوية إلى +150 درجة مئوية"},
-                {"label": "المتانة", "value": "5+ سنوات خارجي / 10+ سنوات داخلي"},
-            ],
-            "features": [
-                {"title": "بناء مقاوم للعبث – تتفتت الملصقات عند محاولة الإزالة"},
-                {"title": "وجهات مقاومة للمواد الكيميائية والمذيبات للبيئات الصناعية"},
-                {"title": "لاصق دائم عالي الالتصاق للمواد البلاستيكية منخفضة الطاقة السطحية"},
-            ],
-            "specifications": [
-                {"label": "سمك المادة", "value": "25 – 75 ميكرومتر"},
-                {"label": "قوة الالتصاق", "value": "≥ 25 نيوتن/25 ملم"},
-                {"label": "طريقة الطباعة", "value": "نقل حراري (شريط ريزين)"},
-            ],
-            "applications": [
-                {"title": "تتبع أصول تكنولوجيا المعلومات – أجهزة كمبيوتر محمولة، خوادم"},
-                {"title": "تحديد هوية الآلات والمعدات في المصانع"},
-                {"title": "أنظمة إدارة المخزون والأدوات"},
-                {"title": "تتبع الأجهزة الطبية والمختبرية"},
-            ],
-        },
-    },
-
-    # ── 2. Rack Labels ──────────────────────────────────────────────────────
+    # ── 1. Rack Labels ──────────────────────────────────────────────────────
     {
         "id": "rack-labels",
         "name": "Rack Labels",
@@ -122,7 +44,7 @@ products = [
         ),
         "tag": "High Volume",
         "tag_ar": "حجم كبير",
-        "image_url": "https://images.unsplash.com/photo-1775740396883-2bfe9a9b5768?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/Rack%20labels.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Material Options", "value": "Polyester (PET), Vinyl, Reflective Film"},
@@ -176,7 +98,7 @@ products = [
         },
     },
 
-    # ── 3. Location Labels ───────────────────────────────────────────────────
+    # ── 2. Location Labels ───────────────────────────────────────────────────
     {
         "id": "location-labels",
         "name": "Location Labels",
@@ -193,7 +115,7 @@ products = [
         ),
         "tag": None,
         "tag_ar": None,
-        "image_url": "https://images.unsplash.com/photo-1694928850410-b209896782a2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/location%20labels.jpg",
         "details": {
             "quick_specs": [
                 {"label": "Material", "value": "Floor-grade Vinyl, Polyester, Anti-Slip Laminate"},
@@ -247,7 +169,7 @@ products = [
         },
     },
 
-    # ── 4. Variable Print Solutions ──────────────────────────────────────────
+    # ── 3. Variable Print Solutions ──────────────────────────────────────────
     {
         "id": "variable-print-solutions",
         "name": "Variable Print Solutions",
@@ -264,7 +186,7 @@ products = [
         ),
         "tag": "Trending",
         "tag_ar": "رائج",
-        "image_url": "https://images.unsplash.com/photo-1693031630369-bd429a57f115?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UHJpbnQlMjBTb2x1dGlvbnN8ZW58MHx8MHx8fDA%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/variable-print-solutions.jpg",
         "details": {
             "quick_specs": [
                 {"label": "Variable Data Types", "value": "Serial #, Batch #, QR, DataMatrix, Date/Lot Codes"},
@@ -319,79 +241,88 @@ products = [
         },
     },
 
-    # ── 5. Washing Care Labels ───────────────────────────────────────────────
+    # ── 4. Warehouse Solutions ───────────────────────────────────────────────
     {
-        "id": "washing-care-labels",
-        "name": "Washing Care Labels",
-        "name_ar": "ملصقات العناية بالغسيل",
+        "id": "warehouse-solutions",
+        "name": "Warehouse Solutions",
+        "name_ar": "حلول المستودعات",
         "desc": (
-            "Industrial-grade laundry and dry-cleaning labels that withstand "
-            "hundreds of wash cycles, high-temperature drying, and chemical "
-            "exposure. Available in standard satin, woven-edge, or soft-touch "
-            "materials for garment, linen, and textile applications."
+            "Comprehensive warehouse labeling and identification solutions designed "
+            "to optimize inventory management, streamline picking operations, and "
+            "maximize storage efficiency. From rack and location labels to floor "
+            "markings and dock management, our industrial-grade products ensure "
+            "clear, durable identification throughout your facility."
         ),
         "desc_ar": (
-            "ملصقات غسيل وتنظيف جاف بدرجة صناعية تتحمل مئات دورات الغسيل "
-            "والتجفيف بدرجة حرارة عالية والتعرض للمواد الكيميائية."
+            "حلول شاملة لوسم وتعريف المستودعات مصممة لتحسين إدارة المخزون "
+            "وتبسيط عمليات الانتقاء وزيادة كفاءة التخزين."
         ),
         "tag": None,
         "tag_ar": None,
-        "image_url": "https://media.istockphoto.com/id/184396984/photo/washing-instructions-on-clothes-label.webp?a=1&b=1&s=612x612&w=0&k=20&c=nfFoZFGp1ObNOmAJLyqoqG3-HhlrP6YfszRb3mXpiHA=",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/warehouse-solutions.jpg",
         "details": {
             "quick_specs": [
-                {"label": "Material Options", "value": "Satin, Polyester, Nylon, Tyvek, Cotton"},
-                {"label": "Wash Cycles", "value": "200+ cycles (industrial) / 50+ (consumer)"},
-                {"label": "Temperature Rating", "value": "Up to 95°C (wash) / 180°C (dryer)"},
-                {"label": "Chemical Resistance", "value": "Bleach, solvents, detergents"},
-                {"label": "Attachment", "value": "Sew-in, Heat Seal, Adhesive, Loop Tag"},
+                {"label": "Label Types", "value": "Rack, Location, Floor, Dock, Aisle, Bay, Shelf"},
+                {"label": "Material Options", "value": "Polyester, Polypropylene, Vinyl, Reflective, Magnetic"},
+                {"label": "Durability", "value": "Indoor 10+ years / Outdoor 5+ years"},
+                {"label": "Adhesive", "value": "Permanent, High-tack, Removable, Magnetic"},
+                {"label": "Compliance", "value": "OSHA, ANSI, ISO, GS1-compatible"},
             ],
             "features": [
-                {"title": "Withstands 200+ industrial laundry cycles without fading or delamination"},
-                {"title": "Satin and polyester materials with soft, fabric-like hand feel"},
-                {"title": "Heat-seal application for fast, adhesive-free attachment to garments"},
-                {"title": "Bleach-resistant inks maintain symbol legibility through repeated exposure"},
-                {"title": "Available in standard GINETEX care symbols or custom pictograms"},
-                {"title": "Tyvek option for tear-resistant, waterproof care labels"},
-                {"title": "RFID/NFC embedded labels for smart laundry tracking systems"},
+                {"title": "Complete warehouse identification system: rack, location, aisle, bay, shelf, and floor labels"},
+                {"title": "Industrial-grade polyester and polypropylene materials for long-term durability"},
+                {"title": "Reflective and high-visibility options for low-light warehouse environments"},
+                {"title": "Magnetic labels for flexible, repositionable rack and shelf identification"},
+                {"title": "Compatible with WMS, ERP, and inventory management software systems"},
+                {"title": "Pre-printed barcodes, QR codes, and sequential numbering available"},
+                {"title": "Chemical, moisture, and abrasion-resistant for harsh warehouse conditions"},
             ],
             "specifications": [
-                {"label": "Material Thickness", "value": "60 – 200 µm"},
-                {"label": "Breaking Strength", "value": "≥ 50 N (woven edge)"},
-                {"label": "Wash Temperature", "value": "Up to 95°C (203°F)"},
-                {"label": "Drying Temperature", "value": "Up to 180°C (356°F)"},
-                {"label": "Standards", "value": "GINETEX, ISO 3758, ASTM D5489"},
-                {"label": "Print Method", "value": "Flexographic, Thermal Transfer, Digital"},
-                {"label": "Certification", "value": "OEKO-TEX Standard 100, FDA (food-contact)"},
+                {"label": "Label Sizes", "value": "25×50 mm to 300×400 mm (custom sizes available)"},
+                {"label": "Material Thickness", "value": "80 – 300 µm"},
+                {"label": "Temperature Range", "value": "-40°C to +120°C"},
+                {"label": "Adhesive Type", "value": "Permanent acrylic, Removable, High-tack rubber"},
+                {"label": "Print Method", "value": "Thermal Transfer, UV Digital, Screen Printing"},
+                {"label": "Barcode Types", "value": "Code 128, Code 39, QR, DataMatrix, GS1-128"},
+                {"label": "Standards", "value": "ANSI MH10.8.1, GS1 General Specifications"},
             ],
             "applications": [
-                {"title": "Uniforms and workwear tracking for hospitality and healthcare"},
-                {"title": "Linen and towel labeling for hotels and laundries"},
-                {"title": "Garment care instructions (brand labels)"},
-                {"title": "Industrial workwear rental programs"},
-                {"title": "Textile recycling and sorting identification"},
-                {"title": "U.S. military and government uniform tracking"},
+                {"title": "Pallet rack and shelving identification for efficient picking and putaway"},
+                {"title": "Floor marking and aisle signage for safety and navigation"},
+                {"title": "Dock door and bay identification for receiving and shipping operations"},
+                {"title": "Cold storage and freezer warehouse labeling systems"},
+                {"title": "Cross-docking and staging area management"},
+                {"title": "Automated storage and retrieval system (AS/RS) integration"},
+                {"title": "Inventory cycle counting and stock-take optimization"},
             ],
         },
         "details_ar": {
             "quick_specs": [
-                {"label": "خيارات المادة", "value": "ساتان، بوليستر، نايلون، تيفيك، قطن"},
-                {"label": "دورات الغسيل", "value": "200+ دورة (صناعي) / 50+ (منزلي)"},
-                {"label": "مقاومة المواد الكيميائية", "value": "مبيض، مذيبات، منظفات"},
+                {"label": "أنواع الملصقات", "value": "رفوف، مواقع، أرضيات، منصات، ممرات، خليج، أرفف"},
+                {"label": "خيارات المادة", "value": "بوليستر، بولي بروبيلين، فينيل، عاكس، مغناطيسي"},
+                {"label": "المتانة", "value": "داخلي 10+ سنوات / خارجي 5+ سنوات"},
             ],
             "features": [
-                {"title": "يتحمل 200+ دورة غسيل صناعي دون بهتان أو تقشر"},
-                {"title": "مواد ساتان وبوليستر بملمس ناعم كالنسيج"},
-                {"title": "أحبار مقاومة للمبيض تحافظ على وضوح الرموز"},
+                {"title": "نظام تعريف كامل للمستودعات: ملصقات الرفوف والمواقع والممرات والأرضيات"},
+                {"title": "مواد بوليستر وبولي بروبيلين صناعية لمتانة طويلة الأمد"},
+                {"title": "خيارات عاكسة وعالية الرؤية لبيئات المستودعات منخفضة الإضاءة"},
+                {"title": "ملصقات مغناطيسية لتعريف مرن وقابل لإعادة الوضع على الرفوف والأرفف"},
+            ],
+            "specifications": [
+                {"label": "نطاق الحرارة", "value": "-40°C إلى +120°C"},
+                {"label": "أنواع الباركود", "value": "Code 128، Code 39، QR، DataMatrix، GS1-128"},
             ],
             "applications": [
-                {"title": "تتبع الزي الرسمي وملابس العمل للضيافة والرعاية الصحية"},
-                {"title": "وسم البياضات والمناشف للفنادق والمغاسل"},
-                {"title": "تعليمات العناية بالملابس (ملصقات العلامة التجارية)"},
+                {"title": "تعريف رفوف البالتات والأرفف للانتقاء والتخزين الفعال"},
+                {"title": "علامات الأرضيات ولافتات الممرات للسلامة والملاحة"},
+                {"title": "تعريف أبواب المنصات ومناطق الاستلام والشحن"},
+                {"title": "أنظمة وسم مستودعات التخزين البارد والمجمدات"},
             ],
         },
     },
 
-    # ── 6. POS Rolls ─────────────────────────────────────────────────────────
+
+    # ── 5. POS Rolls ─────────────────────────────────────────────────────────
     {
         "id": "pos-rolls",
         "name": "POS Rolls",
@@ -408,7 +339,7 @@ products = [
         ),
         "tag": "High Volume",
         "tag_ar": "حجم كبير",
-        "image_url": "https://images.unsplash.com/photo-1708075726378-0b7db65539ea?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/POS%20thermal%20rolls.jpg",
         "details": {
             "quick_specs": [
                 {"label": "Paper Types", "value": "Thermal Paper, Bond Paper, Direct Thermal Labels"},
@@ -463,7 +394,7 @@ products = [
         },
     },
 
-    # ── 7. Hot Stamping Foil ─────────────────────────────────────────────────
+    # ── 6. Hot Stamping Foil ─────────────────────────────────────────────────
     {
         "id": "hot-stamping-foil",
         "name": "Hot Stamping Foil",
@@ -480,7 +411,7 @@ products = [
         ),
         "tag": "Premium",
         "tag_ar": "ممتاز",
-        "image_url": "https://images.unsplash.com/photo-1618470341957-dc61f2aa50d1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/hotstamp%20foil.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Foil Types", "value": "Metallic, Pigment, Holographic, Scratch-Off"},
@@ -535,7 +466,7 @@ products = [
         },
     },
 
-    # ── 8. Jewellery Tags ────────────────────────────────────────────────────
+    # ── 7. Jewellery Tags ────────────────────────────────────────────────────
     {
         "id": "jewellery-tags",
         "name": "Jewellery Tags",
@@ -552,7 +483,7 @@ products = [
         ),
         "tag": None,
         "tag_ar": None,
-        "image_url": "https://plus.unsplash.com/premium_photo-1681276170683-706111cf496e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url":  "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/Jewellery%20tags.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Materials", "value": "Premium Paper, Kraft, PVC, Metallized, Velvet"},

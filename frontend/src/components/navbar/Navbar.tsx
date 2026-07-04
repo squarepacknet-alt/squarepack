@@ -64,6 +64,18 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  // Lock body scroll while products mega-menu is open
+  useEffect(() => {
+    if (productsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [productsOpen]);
+
   const toggleLanguage = () => {
     const newLocale = locale === "en" ? "ar" : "en";
     router.replace(pathname, { locale: newLocale });

@@ -144,7 +144,7 @@ export default function IndustriesPage() {
               {sectors.map((sector, index) => (
                 <div
                   key={index}
-                  className="relative group bg-white border border-slate-200 rounded-[2rem] p-8 md:p-10 hover:bg-[#3de0be] transition-colors duration-500 overflow-hidden flex flex-col sm:flex-row rtl:sm:flex-row-reverse items-start gap-8 hover:shadow-[0_20px_60px_rgba(61,224,190,0.25)] animate-in fade-in slide-in-from-bottom-12 duration-1000 fill-mode-both cursor-crosshair"
+                  className="relative group bg-white border border-slate-200 rounded-[2rem] p-8 md:p-10 hover:bg-[#3de0be] transition-colors duration-500 overflow-hidden flex flex-col sm:flex-row rtl:sm:flex-row-reverse items-start gap-8 hover:shadow-[0_20px_60px_rgba(61,224,190,0.25)] animate-in fade-in slide-in-from-bottom-12 duration-1000 fill-mode-both"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Floating background icon watermark */}

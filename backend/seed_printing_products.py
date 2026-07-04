@@ -27,25 +27,25 @@ CATEGORY_IMAGE = "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q
 
 products = [
 
-    # ── 1. Printing ─────────────────────────────────────────────────────────
+    # ── 1. Printers ─────────────────────────────────────────────────────────
     {
-        "id": "printing",
-        "name": "Printing",
-        "name_ar": "الطباعة",
+        "id": "printers",
+        "name": "Printers",
+        "name_ar": "الطابعات",
         "desc": (
-            "Industrial and desktop label printing solutions supporting thermal "
+            "Industrial and desktop label printers supporting thermal "
             "transfer and direct thermal technologies for every volume. From "
             "entry-level models to high-throughput industrial systems, our "
             "printer portfolio delivers reliable, high-quality output for "
             "barcode, shipping, and product labeling applications."
         ),
         "desc_ar": (
-            "حلول طباعة ملصقات صناعية ومكتبية تدعم تقنيات النقل الحراري والطباعة الحرارية المباشرة "
+            "طابعات ملصقات صناعية ومكتبية تدعم تقنيات النقل الحراري والطباعة الحرارية المباشرة "
             "لجميع الأحجام. من الطرازات المبتدئة إلى الأنظمة الصناعية عالية الإنتاجية."
         ),
         "tag": "Best Seller",
         "tag_ar": "الأكثر مبيعاً",
-        "image_url": "https://m.media-amazon.com/images/I/51cOBojSGVL._AC_UF350,350_QL80_.jpg",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/printers.jpg",
         "details": {
             "quick_specs": [
                 {"label": "Print Technologies", "value": "Thermal Transfer, Direct Thermal"},
@@ -107,160 +107,83 @@ products = [
         },
     },
 
-    # ── 2. Print Care ───────────────────────────────────────────────────────
+
+    # ── 2. Pricing Sticker Gun ───────────────────────────────────────────────────────
     {
-        "id": "print-care",
-        "name": "Print Care",
-        "name_ar": "العناية بالطباعة",
+        "id": "pricing-sticker-gun",
+        "name": "Pricing Sticker Gun",
+        "name_ar": "مسدس ملصقات التسعير",
         "desc": (
-            "Comprehensive printer maintenance, servicing, and spare-parts supply "
-            "to maximise uptime and extend the life of your printing equipment. "
-            "From preventive maintenance kits to emergency on-site repairs, our "
-            "certified technicians keep your label printing operations running "
-            "at peak performance."
+            "Professional-grade pricing guns and label applicators for fast, "
+            "accurate price marking in retail, grocery, and warehouse environments. "
+            "Designed for one-handed operation with ergonomic grips and quick-load "
+            "mechanisms that reduce repetitive strain and boost throughput in "
+            "high-volume pricing operations."
         ),
         "desc_ar": (
-            "صيانة شاملة للطابعات وخدمات وتوريد قطع غيار لتعظيم وقت التشغيل "
-            "وإطالة عمر معدات الطباعة لديك."
+            "مسدسات تسعير وملصقات احترافية لوضع علامات الأسعار بسرعة ودقة "
+            "في بيئات التجزئة والبقالة والمستودعات."
         ),
         "tag": "Essential",
         "tag_ar": "أساسي",
-        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd0kvwJyhOsw3Hup1e_SHgeMtYCdVJaEIDcQ&s",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/Pricing%20sticker%20gun.jpg",
         "details": {
             "quick_specs": [
-                {"label": "Service Types", "value": "Preventive Maintenance, On-Site Repair, Remote Support"},
-                {"label": "Response Time", "value": "Next-day (standard) / 4-hour (premium)"},
-                {"label": "Parts Coverage", "value": "Printheads, Platens, Motors, Sensors, Boards"},
-                {"label": "Warranty", "value": "90 days (repairs) / 1 year (new parts)"},
-                {"label": "Contract Options", "value": "Pay-per-click, Annual, Time & Materials"},
+                {"label": "Label Type", "value": "Pre-printed rolls, Blank rolls, Custom printed"},
+                {"label": "Label Sizes", "value": "21×12 mm to 26×16 mm (standard guns)"},
+                {"label": "Operation", "value": "Manual trigger, One-hand operation"},
+                {"label": "Label Capacity", "value": "1,000 – 5,000 labels per roll"},
+                {"label": "Print Options", "value": "1-line, 2-line, 3-line price markers"},
             ],
             "features": [
-                {"title": "Certified technicians trained on all major printer brands (Zebra, Honeywell, TSC, SATO)"},
-                {"title": "Preventive maintenance kits including printheads, platen rollers, and cleaning supplies"},
-                {"title": "Printhead performance optimization for maximum life and consistent density"},
-                {"title": "Firmware updates and configuration optimization for legacy printers"},
-                {"title": "Emergency on-site repair within 4 hours for critical production lines"},
-                {"title": "Spare parts inventory with overnight shipping availability"},
-                {"title": "Remote diagnostics and telemetry monitoring for proactive maintenance"},
+                {"title": "Ergonomic pistol-grip design reduces hand fatigue during extended use"},
+                {"title": "Quick-load drop-in roll mechanism for fast label roll changes"},
+                {"title": "Adjustable label positioning for consistent placement accuracy"},
+                {"title": "Durable metal and high-impact plastic construction for daily retail use"},
+                {"title": "Compatible with standard pricing labels in multiple sizes and colours"},
+                {"title": "Available in 1-line, 2-line, and 3-line print band configurations"},
+                {"title": "Custom ink rollers and print bands for branded price marking"},
             ],
             "specifications": [
-                {"label": "Service Coverage", "value": "Nationwide (on-site) / Global (remote)"},
-                {"label": "Supported Brands", "value": "Zebra, Honeywell (Intermec), TSC, SATO, Citizen, Epson"},
-                {"label": "Printer Types", "value": "Desktop, Industrial, Mobile, RFID-enabled"},
-                {"label": "Cleaning Frequency", "value": "After each ribbon roll (standard) / Daily (heavy use)"},
-                {"label": "Printhead Life", "value": "30–50 km (203 dpi) / 20–30 km (300 dpi)"},
-                {"label": "SLA Options", "value": "Standard (NBD), Premium (4-hour), 24/7 Critical"},
-                {"label": "Certification", "value": "ISO 9001, Zebra Certified, Honeywell Partner"},
+                {"label": "Label Width", "value": "21 mm – 26 mm (standard) / custom sizes available"},
+                {"label": "Label Length", "value": "12 mm – 16 mm (standard pricing labels)"},
+                {"label": "Roll Capacity", "value": "Up to 5,000 labels per roll"},
+                {"label": "Print Lines", "value": "1, 2, or 3 lines (model dependent)"},
+                {"label": "Characters per Line", "value": "Up to 12 characters"},
+                {"label": "Print Band Type", "value": "Rubber print bands / Custom logo bands"},
+                {"label": "Ink Roller Life", "value": "Up to 10,000 impressions"},
             ],
             "applications": [
-                {"title": "Manufacturing line printer uptime protection"},
-                {"title": "Warehouse and distribution center printer fleets"},
-                {"title": "Healthcare and pharmaceutical labeling compliance"},
-                {"title": "Retail and logistics multi-site printer management"},
-                {"title": "Airline baggage tag printing systems"},
-                {"title": "Postal and courier shipping label printers"},
+                {"title": "Retail price marking and markdown labeling"},
+                {"title": "Supermarket and grocery shelf pricing"},
+                {"title": "Warehouse bin and pallet identification"},
+                {"title": "Inventory date coding and batch labeling"},
+                {"title": "Convenience store and pharmacy pricing"},
+                {"title": "Clearance and sale item marking"},
             ],
         },
         "details_ar": {
             "quick_specs": [
-                {"label": "أنواع الخدمة", "value": "صيانة وقائية، إصلاح في الموقع، دعم عن بُعد"},
-                {"label": "وقت الاستجابة", "value": "اليوم التالي (قياسي) / 4 ساعات (مميز)"},
-                {"label": "تغطية القطع", "value": "رؤوس الطباعة، بكرات، محركات، حساسات، لوحات"},
+                {"label": "نوع الملصق", "value": "لفات مطبوعة مسبقاً، لفات فارغة، طباعة مخصصة"},
+                {"label": "أحجام الملصقات", "value": "21×12 ملم إلى 26×16 ملم (قياسي)"},
+                {"label": "سعة الملصقات", "value": "1,000 – 5,000 ملصق لكل لفة"},
             ],
             "features": [
-                {"title": "فنيون معتمدون على جميع ماركات الطابعات الرئيسية"},
-                {"title": "مجموعات صيانة وقائية تشمل رؤوس الطباعة وبكرات التثبيت ومواد التنظيف"},
-                {"title": "تشخيص عن بُعد ومراقبة عن بعد للصيانة الاستباقية"},
-                {"title": "إصلاح طارئ في الموقع خلال 4 ساعات لخطوط الإنتاج الحرجة"},
+                {"title": "تصميم قبضة مسدس مريح يقلل من إجهاد اليد أثناء الاستخدام المطول"},
+                {"title": "آلية تحميل سريع للفة لتبديل لفات الملصقات بسرعة"},
+                {"title": "وضع ملصق قابل للتعديل لدقة تحديد الموضع"},
+                {"title": "بناء متين من المعدن والبلاستيك عالي التحمل للاستخدام اليومي في التجزئة"},
             ],
             "specifications": [
-                {"label": "تغطية الخدمة", "value": "على مستوى الدولة (في الموقع) / عالمي (عن بُعد)"},
-                {"label": "العلامات المدعومة", "value": "زيبرا، هانيويل، TSC، SATO، سيتيزن، إبسون"},
-                {"label": "أنواع الطابعات", "value": "مكتبية، صناعية، متنقلة، مزودة بتقنية RFID"},
+                {"label": "عرض الملصق", "value": "21 ملم – 26 ملم (قياسي) / أحجام مخصصة متاحة"},
+                {"label": "خطوط الطباعة", "value": "خط واحد، خطان، أو 3 خطوط"},
+                {"label": "عمر بكرة الحبر", "value": "حتى 10,000 طبعة"},
             ],
             "applications": [
-                {"title": "حماية وقت تشغيل طابعات خط الإنتاج"},
-                {"title": "أساطيل طابعات المستودعات ومراكز التوزيع"},
-                {"title": "أنظمة طباعة ملصقات الشحن البريدية والسعوية"},
-            ],
-        },
-    },
-
-    # ── 3. Labels (Printers compatible labels) ──────────────────────────────
-    {
-        "id": "labels-printers",
-        "name": "Labels",
-        "name_ar": "الملصقات",
-        "desc": (
-            "Pre-tested label media optimised for specific printer models, "
-            "ensuring consistent print quality and ribbon compatibility. "
-            "Our certified media program eliminates trial-and-error, delivering "
-            "perfect adhesion, smear-free printing, and maximum printhead life."
-        ),
-        "desc_ar": (
-            "وسائط ملصقات تم اختبارها مسبقاً ومحسّنة لطرازات طابعات محددة، "
-            "مما يضمن جودة طباعة متسقة وتوافق مع الشريط."
-        ),
-        "tag": "Certified",
-        "tag_ar": "معتمد",
-        "image_url": "https://m.media-amazon.com/images/I/61ewOR0OUDL._AC_UF1000,1000_QL80_.jpg",
-        "details": {
-            "quick_specs": [
-                {"label": "Media Types", "value": "Thermal Paper, Polyester, Polypropylene, Vinyl"},
-                {"label": "Printer Compatibility", "value": "Zebra, Honeywell, TSC, SATO, Epson, Citizen"},
-                {"label": "Ribbon Matching", "value": "Wax, Wax-Resin, Resin – pre-qualified pairs"},
-                {"label": "Sample Program", "value": "Free print testing on your equipment"},
-                {"label": "Shelf Life", "value": "2–5 years (substrate dependent)"},
-            ],
-            "features": [
-                {"title": "Printer-certified media – eliminates guesswork and production delays"},
-                {"title": "Optimised ribbon-label pairings for maximum printhead protection"},
-                {"title": "Guaranteed barcode scan quality – ISO Grade A verification included"},
-                {"title": "Custom sizes and materials available with short lead times"},
-                {"title": "Static-free liners for smooth feeding in high-speed printers"},
-                {"title": "Temperature-specific adhesives for cold storage and high-heat applications"},
-                {"title": "FDA-compliant options for food-contact and pharmaceutical labeling"},
-            ],
-            "specifications": [
-                {"label": "Label Sizes", "value": "Any custom size from 15×15 mm to 200×300 mm"},
-                {"label": "Print Resolution Support", "value": "203 dpi, 300 dpi, 600 dpi"},
-                {"label": "Adhesive Options", "value": "Permanent, Removable, Freezer-grade, High-tack"},
-                {"label": "Testing Protocol", "value": "Scratch, smear, adhesion, temperature cycling"},
-                {"label": "Certification", "value": "Printer brand validation report included with order"},
-                {"label": "Minimum Order", "value": "250 labels (sample) / 5,000 labels (production)"},
-                {"label": "Quality Standard", "value": "ISO 9001, Barcode Verification Grade A"},
-            ],
-            "applications": [
-                {"title": "Printer fleet standardization across multiple sites"},
-                {"title": "Mission-critical labeling where print failures are not an option"},
-                {"title": "FDA-regulated pharmaceutical and medical device labeling"},
-                {"title": "Retail and e-commerce fulfilment centers"},
-                {"title": "Automotive parts traceability and warranty labels"},
-                {"title": "Electronics manufacturing and component labeling"},
-            ],
-        },
-        "details_ar": {
-            "quick_specs": [
-                {"label": "أنواع الوسائط", "value": "ورق حراري، بوليستر، بولي بروبيلين، فينيل"},
-                {"label": "توافق الطابعة", "value": "زيبرا، هانيويل، TSC، SATO، إبسون، سيتيزن"},
-                {"label": "مطابقة الشريط", "value": "شمع، شمع-ريزين، ريزين – أزواج معتمدة مسبقاً"},
-            ],
-            "features": [
-                {"title": "وسائط معتمدة للطابعة – يلغي التخمين وتأخيرات الإنتاج"},
-                {"title": "أزواج شريط-ملصق محسّنة لحماية أقصى لرأس الطباعة"},
-                {"title": "جودة مسح باركود مضمونة – تشمل التحقق من الدرجة A ISO"},
-                {"title": "بطانة خالية من الكهرباء الساكنة للتغذية السلسة في الطابعات عالية السرعة"},
-            ],
-            "specifications": [
-                {"label": "أحجام الملصقات", "value": "أي حجم مخصص من 15×15 ملم إلى 200×300 ملم"},
-                {"label": "خيارات اللاصق", "value": "دائم، قابل للإزالة، درجة تجميد، عالي الالتصاق"},
-                {"label": "بروتوكول الاختبار", "value": "خدش، تلطيخ، التصاق، تدوير حراري"},
-            ],
-            "applications": [
-                {"title": "توحيد أسطول الطابعات عبر مواقع متعددة"},
-                {"title": "وسم حرج للمهمة حيث لا يُسمح بفشل الطباعة"},
-                {"title": "وسم الأدوية والأجهزة الطبية الخاضعة لـ FDA"},
-                {"title": "مراكز تلبية طلبات التجارة الإلكترونية والتجزئة"},
+                {"title": "تسعير المنتجات وتحديد التخفيضات في التجزئة"},
+                {"title": "تسعير أرفف السوبرماركت والبقالة"},
+                {"title": "تعريف صناديق وبالتات المستودعات"},
+                {"title": "ترميز التاريخ والدفعات للمخزون"},
             ],
         },
     },

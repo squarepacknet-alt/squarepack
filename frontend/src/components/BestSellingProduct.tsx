@@ -1,112 +1,16 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-
-const CARD_IMAGES = [
-  "/images/hero1.png",
-  "/images/gallery3.png",
-  "/images/hero2.png",
-  "/images/hero1.png",
-  "/images/gallery3.png",
-  "/images/hero2.png",
-];
-
-const TAG_STYLES: Record<string, { bg: string; text: string; dot: string }> = {
-  "Best Seller": { bg: "bg-[#34E8BB]/12", text: "text-[#0c9e7b]", dot: "bg-[#34E8BB]" },
-  Trending: { bg: "bg-amber-400/10", text: "text-amber-600", dot: "bg-amber-400" },
-  "High Volume": { bg: "bg-sky-400/10", text: "text-sky-600", dot: "bg-sky-400" },
-  "High Demand": { bg: "bg-rose-400/10", text: "text-rose-500", dot: "bg-rose-400" },
-  Popular: { bg: "bg-violet-400/10", text: "text-violet-500", dot: "bg-violet-400" },
-  Premium: { bg: "bg-yellow-400/10", text: "text-yellow-600", dot: "bg-yellow-400" },
-};
-
-function ProductCard({
-  product,
-  index,
-  image,
-}: {
-  product: { id?: string; name: string; desc: string; tag: string };
-  index: number;
-  image: string;
-}) {
-  const id =
-    product.id ||
-    product.name.toLowerCase().trim().replace(/[\s/]+/g, "-");
-  const tag = TAG_STYLES[product.tag] ?? TAG_STYLES["Best Seller"];
-  const num = String(index + 1).padStart(2, "0");
-
-  return (
-    <Link href={`/products/${id}`} className="group block shrink-0 w-[280px] md:w-[300px]">
-      <div
-        className="relative h-[400px] md:h-[440px] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_20px_48px_rgba(52,232,187,0.14)]"
-        style={{ willChange: "transform" }}
-      >
-        {/* Image layer */}
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-          style={{ backgroundImage: `url(${image})` }}
-        />
-
-        {/* Soft light overlay — not as dark as before */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c]/90 via-[#0c0c0c]/40 to-[#0c0c0c]/10" />
-
-        {/* Teal glow on hover */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-[#34E8BB]/15 to-transparent" />
-
-        {/* Index number */}
-        <span
-          className="absolute top-4 left-5 font-black leading-none select-none pointer-events-none transition-colors duration-300 group-hover:text-[#34E8BB]/20"
-          style={{
-            fontSize: "clamp(4rem, 8vw, 6rem)",
-            color: "rgba(12,12,12,0.06)",
-            fontVariantNumeric: "tabular-nums",
-          }}
-        >
-          {num}
-        </span>
-
-        {/* Tag badge */}
-        <div className={`absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200/60 shadow-sm`}>
-          <span className={`w-1.5 h-1.5 rounded-full ${tag.dot}`} />
-          <span className={`text-[11px] font-bold tracking-wide uppercase ${tag.text}`}>
-            {product.tag}
-          </span>
-        </div>
-
-        {/* Bottom content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <div className="w-8 h-[2px] bg-[#34E8BB] mb-4 transition-all duration-300 group-hover:w-14" />
-          <h3 className="text-white font-black text-[19px] leading-tight tracking-tight mb-2">
-            {product.name}
-          </h3>
-          <p className="text-white/55 text-[13px] leading-relaxed line-clamp-2 mb-5">
-            {product.desc}
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-[#34E8BB] text-[11px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-              View Details
-            </span>
-            <div className="w-9 h-9 rounded-full border border-white/25 flex items-center justify-center transition-all duration-300 group-hover:bg-[#34E8BB] group-hover:border-[#34E8BB]">
-              <ArrowUpRight className="w-4 h-4 text-white/60 group-hover:text-[#0c0c0c] transition-colors duration-300" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-}
+import ProductCard from "@/components/ProductCard";
 
 export default function BestSellingProducts() {
   const t = useTranslations("BestSellers");
-  const products = t.raw("items") as Array<{
-    id?: string;
-    name: string;
-    desc: string;
-    tag: string;
-  }>;
+  const locale = useLocale();
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const trackRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -129,6 +33,25 @@ export default function BestSellingProducts() {
   const stopDrag = () => setIsDragging(false);
 
   useEffect(() => {
+    const fetchBestSellers = async () => {
+      try {
+        const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+        const apiUrl = rawApiUrl.replace(/\/$/, "");
+        const res = await fetch(`${apiUrl}/api/products/best-sellers?lang=${locale}`);
+        if (res.ok) {
+          const data = await res.json();
+          setProducts(data);
+        }
+      } catch (err) {
+        console.error("Error fetching best sellers:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBestSellers();
+  }, [locale]);
+
+  useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
     const update = () => {
@@ -137,11 +60,13 @@ export default function BestSellingProducts() {
     };
     el.addEventListener("scroll", update, { passive: true });
     return () => el.removeEventListener("scroll", update);
-  }, []);
+  }, [products]);
 
   const scrollBy = (dir: 1 | -1) => {
     trackRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
   };
+
+  if (loading || products.length === 0) return null;
 
   return (
     <section className="relative py-20 md:py-28 overflow-hidden"
@@ -202,10 +127,9 @@ export default function BestSellingProducts() {
         >
           {products.map((product, i) => (
             <ProductCard
-              key={i}
+              key={product.id || i}
               product={product}
-              index={i}
-              image={CARD_IMAGES[i % CARD_IMAGES.length]}
+              className="shrink-0 w-[280px] md:w-[300px]"
             />
           ))}
 

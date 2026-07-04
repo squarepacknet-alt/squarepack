@@ -28,6 +28,21 @@ def get_products(
     )
 
 
+@router.get("/best-sellers")
+def get_best_sellers(
+    lang: str = "en",
+    all: bool = False,
+    db: Session = Depends(get_db),
+):
+
+    service = ProductService(db)
+
+    return service.get_best_sellers(
+        lang=lang,
+        all=all,
+    )
+
+
 @router.get("/{product_id}")
 def get_product(
     product_id: str,

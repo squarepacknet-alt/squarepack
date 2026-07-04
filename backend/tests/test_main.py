@@ -45,6 +45,43 @@ def test_get_products_empty():
     assert response.status_code == 200
     assert response.json() == []
 
+def test_get_best_sellers_empty():
+    response = client.get("/api/products/best-sellers")
+    assert response.status_code == 200
+    assert response.json() == []
+
+def test_get_best_sellers_endpoint():
+    # 1. Login to get token
+    login_res = client.post("/api/admin/login", json={"password": ADMIN_PASSWORD})
+    token = login_res.json()["access_token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    # 2. Create a product with tag
+    prod_payload_tagged = {
+        "name": "Tagged Product",
+        "desc": "A tagged product description",
+        "tag": "Best Seller",
+        "category": "General"
+    }
+    client.post("/api/products", json=prod_payload_tagged, headers=headers)
+
+    # 3. Create a product without tag
+    prod_payload_untagged = {
+        "name": "Untagged Product",
+        "desc": "An untagged product description",
+        "tag": "",
+        "category": "General"
+    }
+    client.post("/api/products", json=prod_payload_untagged, headers=headers)
+
+    # 4. Get best sellers
+    response = client.get("/api/products/best-sellers")
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data) == 1
+    assert data[0]["name"] == "Tagged Product"
+    assert data[0]["tag"] == "Best Seller"
+
 def test_create_contact_inquiry():
     payload = {
         "name": "John Doe",

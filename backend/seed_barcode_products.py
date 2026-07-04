@@ -46,7 +46,7 @@ products = [
         ),
         "tag": "Best Seller",
         "tag_ar": "الأكثر مبيعاً",
-        "image_url": "https://5.imimg.com/data5/SELLER/Default/2022/12/RA/JH/QA/31613990/thermal-transfer-wax-barcode-ribbon.jpg",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/barcode%20ribbons.png",
         "details": {
             "quick_specs": [
                 {"label": "Ribbon Types", "value": "Wax, Wax-Resin, Resin, Premium Resin"},

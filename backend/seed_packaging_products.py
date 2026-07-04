@@ -45,7 +45,7 @@ products = [
         ),
         "tag": "Best Seller",
         "tag_ar": "الأكثر مبيعاً",
-        "image_url": "https://media.istockphoto.com/id/480437357/photo/paper-tape.webp?a=1&b=1&s=612x612&w=0&k=20&c=R6nNuie6uIixwoHdK1PrQTEe5ct9qc1WjqdbWFBxcVI=",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/brown%20tape.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Material Types", "value": "Kraft Paper (Gummed), BOPP, PVC"},
@@ -107,7 +107,82 @@ products = [
         },
     },
 
-    # ── 2. Clear Tapes ──────────────────────────────────────────────────────
+    # ── 2. Masking Tape ──────────────────────────────────────────────────────
+    {
+        "id":       "masking-tape",
+        "name":     "Masking Tape",
+        "name_ar":  "شريط الإخفاء",
+        "desc":     (
+            "Durable, easy-tear masking tapes suitable for painting, bundling, "
+            "and general-purpose industrial or office use. Engineered with a "
+            "conformable crepe backing and a clean-release adhesive system that "
+            "leaves no residue on sensitive surfaces."
+        ),
+        "desc_ar":  (
+            "أشرطة إخفاء متينة وسهلة التمزيق مناسبة للطلاء والتجميع "
+            "والاستخدام الصناعي والمكتبي متعدد الأغراض."
+        ),
+        "tag":      None,
+        "tag_ar":   None,
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/masking%20tape.jpeg",
+        "details": {
+            "quick_specs": [
+                {"label": "Backing",           "value": "Crepe paper, Flatback paper, Washi"},
+                {"label": "Adhesive",          "value": "Natural rubber, Acrylic"},
+                {"label": "Width Range",       "value": "6 mm – 100 mm"},
+                {"label": "Temperature Rating","value": "Up to 120 °C (60 min dwell)"},
+                {"label": "Residue",           "value": "Clean removal up to 7 days"},
+            ],
+            "features": [
+                {"title": "Conformable crepe backing tears cleanly by hand – no tools needed"},
+                {"title": "Clean-release adhesive leaves zero residue on paint, glass, and trim"},
+                {"title": "Heat-resistant up to 120 °C for oven and automotive paint applications"},
+                {"title": "UV-resistant variants available for outdoor masking up to 30 days"},
+                {"title": "High elongation for masking curved surfaces, mouldings, and profiles"},
+                {"title": "Available in general-purpose, medium, and high-temp performance grades"},
+                {"title": "Custom widths and core sizes for automated dispensing equipment"},
+            ],
+            "specifications": [
+                {"label": "Backing Type",      "value": "Crepe paper (standard) / Flatback / Washi"},
+                {"label": "Adhesive Type",     "value": "Natural rubber resin / Acrylic"},
+                {"label": "Thickness",         "value": "130 – 185 µm (backing + adhesive)"},
+                {"label": "Tensile Strength",  "value": "≥ 50 N/25 mm"},
+                {"label": "Elongation",        "value": "8 – 14 %"},
+                {"label": "Temp. Resistance",  "value": "Up to 80 °C (standard) / 120 °C (high-temp)"},
+                {"label": "Widths Available",  "value": "6, 9, 12, 18, 24, 36, 48, 72, 100 mm"},
+            ],
+            "applications": [
+                {"title": "Automotive and industrial spray painting"},
+                {"title": "Interior decoration and wall painting"},
+                {"title": "PCB and electronics protection during soldering"},
+                {"title": "Bundling, holding, and splicing in manufacturing"},
+                {"title": "Office general-purpose fixing and labeling"},
+                {"title": "Carpentry and woodworking surface protection"},
+            ],
+        },
+        "details_ar": {
+            "quick_specs": [
+                {"label": "الدعامة",           "value": "ورق مجعد، ورق مسطح، واشي"},
+                {"label": "اللاصق",            "value": "مطاط طبيعي، أكريليك"},
+                {"label": "نطاق العرض",        "value": "6 ملم – 100 ملم"},
+                {"label": "درجة الحرارة",      "value": "حتى 120 درجة مئوية"},
+            ],
+            "features": [
+                {"title": "دعامة ورق مجعد تتمزق بيسر باليد دون أدوات"},
+                {"title": "لاصق نظيف الإزالة لا يترك أثراً على الطلاء والزجاج"},
+                {"title": "مقاوم للحرارة حتى 120 درجة مئوية لتطبيقات طلاء السيارات"},
+                {"title": "خيارات مقاومة للأشعة فوق البنفسجية للإخفاء الخارجي"},
+            ],
+            "applications": [
+                {"title": "طلاء بالرش للسيارات والصناعة"},
+                {"title": "الديكور الداخلي وطلاء الجدران"},
+                {"title": "حماية ألواح الدوائر الإلكترونية أثناء اللحام"},
+                {"title": "التجميع والتثبيت في التصنيع"},
+            ],
+        },
+    },
+
+    # ── 3. Clear Tapes ──────────────────────────────────────────────────────
     {
         "id": "clear-tapes",
         "name": "Clear Tapes",
@@ -125,7 +200,7 @@ products = [
         ),
         "tag": "Trending",
         "tag_ar": "رائج",
-        "image_url": "https://images.unsplash.com/photo-1731575131075-bf333f0194ea?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/clear%20tape.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Film Material", "value": "High-Clarity BOPP, PVC, PLA (bio-based)"},
@@ -188,7 +263,7 @@ products = [
         },
     },
 
-    # ── 3. Printed Tapes ────────────────────────────────────────────────────
+    # ── 4. Printed Tapes ────────────────────────────────────────────────────
     {
         "id": "printed-tapes",
         "name": "Printed Tapes",
@@ -206,7 +281,7 @@ products = [
         ),
         "tag": None,
         "tag_ar": None,
-        "image_url": "https://images.unsplash.com/photo-1634814407084-6b72cd8c5b19?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/printed%20tape.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Print Technology", "value": "Flexographic (up to 6 colours), Digital (4 colours)"},
@@ -268,7 +343,7 @@ products = [
         },
     },
 
-    # ── 4. Bubble Wrap ──────────────────────────────────────────────────────
+    # ── 5. Bubble Wrap ──────────────────────────────────────────────────────
     {
         "id": "bubble-wrap",
         "name": "Bubble Wrap",
@@ -286,7 +361,7 @@ products = [
         ),
         "tag": "Essential",
         "tag_ar": "أساسي",
-        "image_url": "https://images.unsplash.com/photo-1613574203646-ffdae46ce3e9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/bubble%20wrap.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Bubble Sizes", "value": "Small (3/16\"), Medium (5/16\"), Large (1/2\"), Jumbo (1\")"},
@@ -349,7 +424,7 @@ products = [
         },
     },
 
-    # ── 5. Stretch Films ────────────────────────────────────────────────────
+    # ── 6. Stretch Films ────────────────────────────────────────────────────
     {
         "id": "stretch-films",
         "name": "Stretch Films",
@@ -367,7 +442,7 @@ products = [
         ),
         "tag": "High Volume",
         "tag_ar": "حجم كبير",
-        "image_url": "https://plus.unsplash.com/premium_photo-1726718576553-2ffd4eaac0ad?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/stretch%20film.jpeg",
         "details": {
             "quick_specs": [
                 {"label": "Film Grades", "value": "Hand Grade, Machine Grade, Ultra Pre-Stretch"},
@@ -429,6 +504,97 @@ products = [
             ],
         },
     },
+
+    # ── 7. Pallet Bands ─────────────────────────────────────────────────────
+    {
+        "id": "pallet-bands",
+        "name": "Pallet Bands",
+        "name_ar": "أحزمة البليت",
+        "desc": (
+            "Heavy-duty reusable pallet bands that secure palletized loads in seconds "
+            "without tools, machines, or single-use plastic. Unlike disposable shrink wrap, "
+            "these bands reuse across many loads, lowering cost per pallet and cutting "
+            "plastic waste for warehouses with steady pallet volume."
+        ),
+        "desc_ar": (
+            "أحزمة بليت مطاطية قابلة لإعادة الاستخدام تثبت الأحمال الموضوعة على البليتات في ثوانٍ "
+            "دون أدوات أو آلات أو بلاستيك للاستخدام مرة واحدة. على عكس الغلاف البلاستيكي القابل للتخلص بعد مرة واحدة، "
+            "يمكن إعادة استخدام هذه الأحزمة لعدة شحنات، مما يقلل التكلفة لكل بليت ويخفض نفايات البلاستيك في المستودعات ذات حجم البليت الثابت."
+        ),
+        "tag": "Best Seller",
+        "tag_ar": "الأكثر مبيعاً",
+        "image_url": "https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/squarepack-images/pallet_bands.jpeg",
+        "details": {
+            "quick_specs": [
+                {"label": "Available Sizes", "value": "84\", 92\", 112\""},
+                {"label": "Material", "value": "Premium natural rubber, UV and temperature resistant"},
+                {"label": "Reuse Cycles", "value": "Dozens to hundreds of pallets per band"},
+                {"label": "Application Time", "value": "Under 10 seconds per pallet"},
+                {"label": "Equipment Required", "value": "None"},
+                {"label": "Best For", "value": "Stacked, boxed, and returnable loads"},
+            ],
+            "features": [
+                {"title": "Reusable across many loads so cost per pallet drops with each cycle"},
+                {"title": "Applies in one motion with no wrap machine, heat gun, or tools"},
+                {"title": "Ideal for stacked, uniform, or boxed loads with strong horizontal compression"},
+                {"title": "Outperforms shrink wrap for closed-loop routes, returns, and internal transfer"},
+                {"title": "Eliminates single-use plastic film waste from every load it replaces"},
+                {"title": "American-made by Alliance Rubber Company in Hot Springs, Arkansas"},
+            ],
+            "specifications": [
+                {"label": "Band Sizes", "value": "84\" (standard), 92\" (tall loads), 112\" (oversized)"},
+                {"label": "Typical Use", "value": "Closed-loop distribution, internal transfer, and returnable routes"},
+                {"label": "Material", "value": "Premium natural rubber"},
+                {"label": "Durability", "value": "Many reuse cycles until wear requires replacement"},
+                {"label": "Application", "value": "Fast hand application in seconds"},
+                {"label": "Manufacturer", "value": "Alliance Rubber Company, Hot Springs, Arkansas, USA"},
+            ],
+            "applications": [
+                {"title": "Warehouse shipping – secure palletized inventory for trailers, racks, and cross docks"},
+                {"title": "Internal transfer – reuse bands across multiple loads in closed-loop systems"},
+                {"title": "Distribution centers – stabilize stacked cartons without disposable film"},
+                {"title": "Returnable routes – keep pallet loads secure on the return trip too"},
+                {"title": "Fulfillment operations – speed up pallet preparation with no walk-around wrapping"},
+                {"title": "When you want to cut plastic waste and lower recurring packaging cost"},
+            ],
+        },
+        "details_ar": {
+            "quick_specs": [
+                {"label": "الأحجام المتاحة", "value": "84\" و92\" و112\""},
+                {"label": "المادة", "value": "مطاط طبيعي ممتاز مقاوم للأشعة فوق البنفسجية ودرجات الحرارة"},
+                {"label": "دورات إعادة الاستخدام", "value": "عشرات إلى مئات الأعباء لكل حزام"},
+                {"label": "وقت التطبيق", "value": "أقل من 10 ثوانٍ لكل بليت"},
+                {"label": "المعدات المطلوبة", "value": "لا شيء"},
+                {"label": "الأفضل لـ", "value": "الأحمال المكدسة والمغلفة والمسارات القابلة للإرجاع"},
+            ],
+            "features": [
+                {"title": "قابلة لإعادة الاستخدام عبر العديد من الأعباء بحيث تنخفض التكلفة لكل بليت مع كل دورة"},
+                {"title": "تُطبَّق بحركة واحدة دون آلة لف أو مسدس حراري أو أدوات"},
+                {"title": "مثالية للأحمال المكدسة أو الموحدة أو المعبأة بضغط أفقي قوي"},
+                {"title": "تفوق على الغلاف البلاستيكي في المسارات ذات الحلقة المغلقة والعودة والنقل الداخلي"},
+                {"title": "تلغي نفايات الفيلم البلاستيكي للاستخدام الواحد من كل حمولة"},
+                {"title": "صُنع في أمريكا بواسطة Alliance Rubber Company في هوت سبرينغز، أركنساس"},
+            ],
+            "specifications": [
+                {"label": "أحجام الحزام", "value": "84\" (قياسي)، 92\" (أحمال طويلة)، 112\" (مقاس كبير)"},
+                {"label": "الاستخدام النموذجي", "value": "التوزيع ذو الحلقة المغلقة، النقل الداخلي، والمسارات القابلة للإرجاع"},
+                {"label": "المادة", "value": "مطاط طبيعي ممتاز"},
+                {"label": "المتانة", "value": "العديد من دورات إعادة الاستخدام حتى يتطلب الاستبدال"},
+                {"label": "التطبيق", "value": "تطبيق يدوي سريع في ثوانٍ"},
+                {"label": "الجهة المصنعة", "value": "Alliance Rubber Company، هوت سبرينغز، أركنساس، الولايات المتحدة الأمريكية"},
+            ],
+            "applications": [
+                {"title": "شحن المستودعات – تثبيت البضائع على البليتات للشاحنات والرفوف ومحطات التبديل"},
+                {"title": "النقل الداخلي – إعادة استخدام الأحزمة عبر العديد من الأعباء في أنظمة الحلقة المغلقة"},
+                {"title": "مراكز التوزيع – تثبيت الكراتين المكدسة بدون فيلم يمكن التخلص منه"},
+                {"title": "المسارات القابلة للإرجاع – إبقاء الأحمال آمنة في رحلة العودة أيضًا"},
+                {"title": "عمليات التلبية – تسريع إعداد البليت دون الحاجة للمشي حوله"},
+                {"title": "عندما تريد تقليل نفايات البلاستيك وخفض تكلفة التعبئة المتكررة"},
+            ],
+        },
+    },
+
+
 ]
 
 
