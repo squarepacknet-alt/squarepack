@@ -8,7 +8,7 @@ export default function BrochureButton() {
 
   return (
     <a
-      href="https://cdn.squarepack.net/SQUAREPACK-BROCHURE.pdf"
+      href="https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/brochure/SQUAREPACK%20BROCHURE.pdf"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Download Brochure PDF"
