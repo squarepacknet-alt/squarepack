@@ -129,7 +129,7 @@ export default function BestSellingProducts() {
             <ProductCard
               key={product.id || i}
               product={product}
-              className="shrink-0 w-[280px] md:w-[300px]"
+              className="shrink-0 w-[280px] md:w-[300px] !flex-none"
             />
           ))}
 

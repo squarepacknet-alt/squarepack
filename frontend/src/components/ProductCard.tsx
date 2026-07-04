@@ -90,8 +90,8 @@ export default function ProductCard({ product, className = "" }: ProductCardProp
       </div>
 
       {/* Mobile Card */}
-      <Link href={`/products/${product.id}`} className="block md:hidden">
-        <div className="product-mobile-card">
+      <Link href={`/products/${product.id}`} className={`block md:hidden ${className}`}>
+        <div className="product-mobile-card w-full">
           <div className="product-mobile-card__image">
             {product.image_url ? (
               <Image
