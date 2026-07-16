@@ -104,14 +104,14 @@ input, textarea, select {
 }
 
 /* When ANY sibling in the row is hovered, shrink all */
-.product-showcase-row:hover .product-showcase-card {
+/* .product-showcase-row:hover .product-showcase-card {
   flex: 0.7;
 }
 
 /* The hovered card expands */
-.product-showcase-row .product-showcase-card:hover {
-  flex: 2.6;
-}
+/* .product-showcase-row .product-showcase-card:hover {
+  flex: 0.7;
+} */
 
 /* Background image layer */
 .product-showcase-card__image {

@@ -125,7 +125,7 @@ export default async function TestimonialsPage({
         </section>
 
         {/* Stats bar */}
-        <section className="container mb-20">
+        {/* <section className="container mb-20">
           <div className="overflow-x-auto -mx-6 px-6 sm:mx-0 sm:px-0">
             <div className="grid grid-cols-3 divide-x divide-slate-200 rtl:divide-x-reverse border border-slate-200 rounded-2xl overflow-hidden shadow-sm min-w-[480px] sm:min-w-0">
               {[
@@ -150,7 +150,7 @@ export default async function TestimonialsPage({
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials Grid */}
         <section className="container pb-20">

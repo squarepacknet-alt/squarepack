@@ -224,7 +224,7 @@ export default function Navbar() {
               alt="SquarePack Text"
               width={120}
               height={32}
-              className={`hidden sm:block h-8 w-auto object-contain transition-all duration-300 ${isOverDark ? "brightness-0 invert" : ""}`}
+              className={`sm:block h-8 w-auto object-contain transition-all duration-300 ${isOverDark ? "brightness-0 invert" : ""}`}
             />
           </Link>
 

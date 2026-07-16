@@ -51,7 +51,7 @@ export default function Features() {
             type="button"
             onClick={() =>
               window.open(
-                'https://cdn.squarepack.net/SQUAREPACK-BROCHURE.pdf',
+                'https://ubsmrihzrvqmdvzfqoyu.supabase.co/storage/v1/object/public/brochure/SQUAREPACK%20BROCHURE.pdf',
                 '_blank',
               )
             }

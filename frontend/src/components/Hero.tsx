@@ -20,7 +20,7 @@ const slides = [
   },
   { id: 'c3', image: '/images/barrels_hero.png', label: 'Pallet Bands' },
   { id: 'c4', image: '/images/security_hero.png', label: 'Electronics' },
-  { id: 'c5', image: '/images/ribon_hero.png', label: 'Retail Packaging' },
+  // { id: 'c5', image: '/images/ribon_hero.png', label: 'Retail Packaging' },
   { id: 'c6', image: '/images/perfume__hero.png', label: 'Luxury Brands' },
 ];
 
