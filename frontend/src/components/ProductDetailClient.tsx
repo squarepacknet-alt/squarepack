@@ -64,45 +64,6 @@ export default function ProductDetailClient({ product, locale }: { product: Prod
           <span className="text-slate-900">{product.name}</span>
         </nav>
 
-        {/* Video Section - Coming Soon */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-slate-900 aspect-video shadow-2xl group border border-slate-200/50"
-          >
-            <video 
-              src="/videos/pallet_bands_video.mp4" 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-105"
-            />
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent pointer-events-none" />
-            
-            {/* Coming Soon Glassmorphism Overlay */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-              <motion.div 
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-white/10 backdrop-blur-md px-10 py-8 rounded-3xl border border-white/20 flex flex-col items-center shadow-[0_8px_32px_rgba(0,0,0,0.3)] transform transition-transform duration-500 group-hover:-translate-y-2"
-              >
-                <div className="inline-flex items-center gap-2 bg-[#3de0be]/20 px-4 py-1.5 rounded-full mb-4 border border-[#3de0be]/30">
-                  <div className="w-2 h-2 rounded-full bg-[#3de0be] animate-pulse" />
-                  <span className="text-[#3de0be] font-bold tracking-[0.2em] uppercase text-xs">Product Preview</span>
-                </div>
-                <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-tight drop-shadow-lg">
-                  Coming Soon
-                </h2>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-
         {/* Top Hero Section */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-24">
           
