@@ -10,8 +10,8 @@ import AppButton from './appButton/AppButton';
 const slides = [
   {
     id: 'c1',
-    image: '/images/cosmetic_hero.png',
-    label: 'Cosmetic & Beauty',
+    image: '/images/product-1.png',
+    label: 'All types of products',
   },
   {
     id: 'c2',

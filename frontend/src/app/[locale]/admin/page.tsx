@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Package, LogOut } from "lucide-react";
 import { TabType } from "@/components/admin/types";
 import { useToast } from "@/components/admin/hooks/useToast";
@@ -12,11 +12,13 @@ import { StatCards } from "@/components/admin/components/StatCards";
 import { ProductsTab } from "@/components/admin/components/ProductsTab";
 import { TestimonialsTab } from "@/components/admin/components/TestimonialsTab";
 import { InquiriesTab } from "@/components/admin/components/InquiriesTab";
+import { validateTokenRequest, setUnauthorizedHandler } from "@/components/admin/api";
 
 
 export default function AdminDashboard() {
   const [authed, setAuthed] = useState(false);
   const [tab, setTab] = useState<TabType>("products");
+  const [isValidating, setIsValidating] = useState(true);
 
   const { toast, showToast } = useToast();
   const { products, fetchProducts, createProduct, updateProduct, deleteProduct } = useProducts(showToast);
@@ -24,8 +26,38 @@ export default function AdminDashboard() {
   const { inquiries, fetchInquiries, deleteInquiry } = useInquiries(showToast);
 
   useEffect(() => {
-    if (localStorage.getItem("admin_token")) setAuthed(true);
+    const validateToken = async () => {
+      const token = localStorage.getItem("admin_token");
+      if (!token) {
+        setIsValidating(false);
+        return;
+      }
+
+      try {
+        const res = await validateTokenRequest();
+        if (res.ok) {
+          setAuthed(true);
+        } else {
+          localStorage.removeItem("admin_token");
+        }
+      } catch {
+        localStorage.removeItem("admin_token");
+      } finally {
+        setIsValidating(false);
+      }
+    };
+
+    validateToken();
   }, []);
+
+  // Set up unauthorized handler to redirect to login on 401 errors
+  const handleUnauthorized = useCallback(() => {
+    setAuthed(false);
+  }, []);
+
+  useEffect(() => {
+    setUnauthorizedHandler(handleUnauthorized);
+  }, [handleUnauthorized]);
 
   useEffect(() => {
     if (authed) {
@@ -35,6 +67,7 @@ export default function AdminDashboard() {
     }
   }, [authed]);
 
+  if (isValidating) return null;
   if (!authed) return <LoginScreen onLogin={() => setAuthed(true)} />;
 
   return (

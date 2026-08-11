@@ -49,7 +49,7 @@ const productCategories: ProductCategory[] = [
       },
       {
         name: "Asset Labels",
-        slug: "asset-labels-security",
+        slug: "asset-labels",
       },
       {
         name: "Custom Asset Labels",
@@ -101,11 +101,11 @@ const productCategories: ProductCategory[] = [
     items: [
       {
         name: "Printer",
-        slug: "printer",
+        slug: "printers",
       },
       {
-        name: "Pricing Slide Gum",
-        slug: "pricing-slide-gum",
+        name: "Pricing Sticker Gun",
+        slug: "pricing-sticker-gun",
       },
     ],
   },

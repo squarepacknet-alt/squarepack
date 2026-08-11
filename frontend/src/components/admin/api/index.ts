@@ -1,5 +1,11 @@
 export const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/$/, "");
 
+let onUnauthorized: (() => void) | null = null;
+
+export function setUnauthorizedHandler(handler: () => void) {
+  onUnauthorized = handler;
+}
+
 function authHeaders(extra?: HeadersInit): HeadersInit {
   return {
     Authorization: `Bearer ${localStorage.getItem("admin_token")}`,
@@ -12,7 +18,17 @@ function jsonHeaders(): HeadersInit {
 }
 
 async function apiFetch(path: string, init?: RequestInit) {
-  return fetch(`${API}${path}`, init);
+  const response = await fetch(`${API}${path}`, init);
+  
+  // Handle 401 Unauthorized - clear invalid token and trigger redirect
+  if (response.status === 401) {
+    localStorage.removeItem("admin_token");
+    if (onUnauthorized) {
+      onUnauthorized();
+    }
+  }
+  
+  return response;
 }
 
 // --- Auth ---
@@ -22,6 +38,10 @@ export async function loginRequest(password: string) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ password }),
   });
+}
+
+export async function validateTokenRequest() {
+  return apiFetch("/api/admin/validate", { headers: authHeaders() });
 }
 
 // --- Products ---

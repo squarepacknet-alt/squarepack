@@ -16,6 +16,8 @@ from services.admin_service import (
     AdminService,
 )
 
+from core.security import verify_admin
+
 router = APIRouter(
     prefix="/api/admin",
     tags=["Admin"],
@@ -34,3 +36,10 @@ def admin_login(
     service = AdminService(db)
 
     return service.login(request)
+
+
+@router.get("/validate")
+def validate_token(
+    _admin: str = Depends(verify_admin),
+):
+    return {"valid": True}
