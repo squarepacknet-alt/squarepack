@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
-from core.security import verify_admin
+from core.security import require_editor_role, require_admin_role
 from db.database import get_db
 
 from schemas.testimonials_schema import Testimonial
@@ -68,7 +68,7 @@ def update_testimonial(
     testimonial_id: str,
     updated_testimonial: Testimonial,
     db: Session = Depends(get_db),
-    _admin: str = Depends(verify_admin),
+    _user=Depends(require_editor_role),
 ):
 
     service = TestimonialService(db)
@@ -83,7 +83,7 @@ def update_testimonial(
 def approve_testimonial(
     testimonial_id: str,
     db: Session = Depends(get_db),
-    _admin: str = Depends(verify_admin),
+    _user=Depends(require_editor_role),
 ):
 
     service = TestimonialService(db)
@@ -95,7 +95,7 @@ def approve_testimonial(
 def delete_testimonial(
     testimonial_id: str,
     db: Session = Depends(get_db),
-    _admin: str = Depends(verify_admin),
+    _user=Depends(require_admin_role),
 ):
 
     service = TestimonialService(db)

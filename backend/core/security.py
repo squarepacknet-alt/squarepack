@@ -16,13 +16,11 @@ from core.config import (
     SECRET_KEY,
 )
 from db.database import SessionLocal, get_db
-from models.admin import DBAdmin
+from models.user import DBUser
 
 # --- SECURITY ---
 
-
 pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
-
 
 security = HTTPBearer()
 
@@ -35,20 +33,20 @@ def get_password_hash(password):
     return pwd_context.hash(password)
 
 
-def verify_admin(
+def get_current_user(
     auth: HTTPAuthorizationCredentials = Depends(security),
     db: Session = Depends(get_db),
-):
+) -> DBUser:
+    """Decode token and return the DBUser. Raises 401 if invalid."""
     token = auth.credentials
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username: str = payload.get("sub")
-        if not username:
+        email: str = payload.get("sub")
+        if not email:
             raise HTTPException(status_code=401, detail="Invalid token")
 
-        # Verify user still exists in DB
-        admin = db.query(DBAdmin).filter(DBAdmin.username == username).first()
-        if not admin:
+        user = db.query(DBUser).filter(DBUser.email == email).first()
+        if not user:
             raise HTTPException(status_code=401, detail="User no longer exists")
 
     except JWTError:
@@ -57,7 +55,31 @@ def verify_admin(
             detail="Could not validate credentials",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    return username
+    return user
+
+
+def require_editor_role(current_user: DBUser = Depends(get_current_user)) -> DBUser:
+    """Allow both 'admin' and 'editor' roles."""
+    if current_user.role not in ("admin", "editor"):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Insufficient permissions",
+        )
+    return current_user
+
+
+def require_admin_role(current_user: DBUser = Depends(get_current_user)) -> DBUser:
+    """Allow only 'admin' role."""
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin role required",
+        )
+    return current_user
+
+
+# Keep verify_admin as an alias for backward-compat references (routes will be updated)
+verify_admin = require_editor_role
 
 
 def create_access_token(data: dict):
@@ -68,22 +90,42 @@ def create_access_token(data: dict):
     return encoded_jwt
 
 
-def seed_admin(db: Optional[Session] = None):
+def seed_users(db: Optional[Session] = None):
+    """Seed the two initial users on startup."""
     should_close = False
     if db is None:
         db = SessionLocal()
         should_close = True
     try:
-        admin_exists = db.query(DBAdmin).filter(DBAdmin.username == "admin").first()
-        if not admin_exists:
-            new_admin = DBAdmin(
-                id=str(uuid.uuid4()),
-                username="admin",
-                hashed_password=get_password_hash(ADMIN_PASSWORD),
-            )
-            db.add(new_admin)
-            db.commit()
-            print("DEBUG: Seeded default admin user.")
+        users_to_seed = [
+            {
+                "email": "admin@squarepack.net",
+                "password": ADMIN_PASSWORD,
+                "role": "admin",
+            },
+            {
+                "email": "user@squarepack.net",
+                "password": ADMIN_PASSWORD,
+                "role": "editor",
+            },
+        ]
+        for u in users_to_seed:
+            existing = db.query(DBUser).filter(DBUser.email == u["email"]).first()
+            if not existing:
+                new_user = DBUser(
+                    id=str(uuid.uuid4()),
+                    email=u["email"],
+                    hashed_password=get_password_hash(u["password"]),
+                    role=u["role"],
+                )
+                db.add(new_user)
+                print(f"DEBUG: Seeded user {u['email']} ({u['role']})")
+        db.commit()
     finally:
         if should_close:
             db.close()
+
+
+# Legacy alias so old imports don't break immediately
+def seed_admin(db=None):
+    seed_users(db)

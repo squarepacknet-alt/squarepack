@@ -5,9 +5,10 @@ import { Inquiry } from "../types";
 interface Props {
   inquiries: Inquiry[];
   onDelete: (id: string) => void;
+  canDelete?: boolean;
 }
 
-export function InquiriesTab({ inquiries, onDelete }: Props) {
+export function InquiriesTab({ inquiries, onDelete, canDelete = true }: Props) {
   return (
     <div className="bg-white rounded-2xl border border-slate-200/60 shadow-sm overflow-hidden">
       <div className="px-6 py-5 border-b border-slate-100">
@@ -26,12 +27,15 @@ export function InquiriesTab({ inquiries, onDelete }: Props) {
               <div className="text-[12px] text-slate-400">{i.phone} | Topic: {i.topic}</div>
               <div className="mt-2 text-[14px] text-slate-700 bg-slate-50 p-3 rounded-lg">{i.message}</div>
             </div>
-            <button
-              onClick={() => onDelete(i.id)}
-              className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-100 flex items-center justify-center shrink-0 transition-colors group"
-            >
-              <Trash2 className="w-3.5 h-3.5 text-slate-500 group-hover:text-red-600" />
-            </button>
+            {canDelete && (
+              <button
+                onClick={() => onDelete(i.id)}
+                className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-100 flex items-center justify-center shrink-0 transition-colors group"
+                title="Delete inquiry"
+              >
+                <Trash2 className="w-3.5 h-3.5 text-slate-500 group-hover:text-red-600" />
+              </button>
+            )}
           </div>
         ))}
       </div>

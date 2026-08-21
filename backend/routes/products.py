@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
-from core.security import verify_admin
+from core.security import require_editor_role, require_admin_role
 from db.database import get_db
 
 from schemas.products_schema import Product
@@ -68,7 +68,7 @@ def get_product(
 def create_product(
     product: Product,
     db: Session = Depends(get_db),
-    _admin: str = Depends(verify_admin),
+    _user=Depends(require_editor_role),
 ):
 
     service = ProductService(db)
@@ -84,7 +84,7 @@ def update_product(
     product_id: str,
     updated_product: Product,
     db: Session = Depends(get_db),
-    _admin: str = Depends(verify_admin),
+    _user=Depends(require_editor_role),
 ):
 
     service = ProductService(db)
@@ -99,7 +99,7 @@ def update_product(
 def delete_product(
     product_id: str,
     db: Session = Depends(get_db),
-    _admin: str = Depends(verify_admin),
+    _user=Depends(require_admin_role),
 ):
 
     service = ProductService(db)

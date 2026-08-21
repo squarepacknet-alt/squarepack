@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
+import { API_URL } from "@/config/api";
 
 export default function BestSellingProducts() {
   const t = useTranslations("BestSellers");
@@ -35,9 +36,7 @@ export default function BestSellingProducts() {
   useEffect(() => {
     const fetchBestSellers = async () => {
       try {
-        const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
-        const apiUrl = rawApiUrl.replace(/\/$/, "");
-        const res = await fetch(`${apiUrl}/api/products/best-sellers?lang=${locale}`);
+        const res = await fetch(`${API_URL}/api/products/best-sellers?lang=${locale}`);
         if (res.ok) {
           const data = await res.json();
           setProducts(data);

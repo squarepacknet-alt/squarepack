@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from sqlalchemy import text
 
 from db.database import Base, engine
-from core.security import seed_admin
+from core.security import seed_users
 
 
 @asynccontextmanager
@@ -29,6 +29,15 @@ async def lifespan(app: FastAPI):
                 text("ALTER TABLE products ADD COLUMN IF NOT EXISTS details_ar JSON")
             )
 
+            # Blog SEO columns
+            conn.execute(text("ALTER TABLE blogs ADD COLUMN IF NOT EXISTS slug VARCHAR UNIQUE"))
+            conn.execute(text("ALTER TABLE blogs ADD COLUMN IF NOT EXISTS summary TEXT"))
+            conn.execute(text("ALTER TABLE blogs ADD COLUMN IF NOT EXISTS is_published BOOLEAN DEFAULT FALSE"))
+            conn.execute(text("ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_title VARCHAR"))
+            conn.execute(text("ALTER TABLE blogs ADD COLUMN IF NOT EXISTS meta_description TEXT"))
+            conn.execute(text("ALTER TABLE blogs ADD COLUMN IF NOT EXISTS keywords VARCHAR"))
+            conn.execute(text("ALTER TABLE blogs ADD COLUMN IF NOT EXISTS permalink VARCHAR"))
+
             conn.commit()
 
         print("Database initialized")
@@ -37,8 +46,8 @@ async def lifespan(app: FastAPI):
         print(f"Startup DB Error: {e}")
 
     try:
-        seed_admin()
-        print("Admin seeded")
+        seed_users()
+        print("Users seeded")
 
     except Exception as e:
         print(f"Seed Error: {e}")

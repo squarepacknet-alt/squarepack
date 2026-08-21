@@ -33,16 +33,15 @@ interface Testimonial {
   rating: number;
 }
 
+import { API_URL } from "@/config/api";
+
 interface StatItem {
   label: string;
 }
 
 async function getTestimonials(locale: string): Promise<Testimonial[]> {
   try {
-    const rawApiUrl =
-      process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-    const apiUrl = rawApiUrl.replace(/\/$/, "");
-    const res = await fetch(`${apiUrl}/api/testimonials?lang=${locale}`, {
+    const res = await fetch(`${API_URL}/api/testimonials?lang=${locale}`, {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("API error");

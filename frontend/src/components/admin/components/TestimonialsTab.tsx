@@ -15,9 +15,10 @@ interface Props {
   onUpdate: (id: string, form: TestimonialFormData) => Promise<boolean>;
   onDelete: (id: string) => void;
   onApprove: (id: string) => void;
+  canDelete?: boolean;
 }
 
-export function TestimonialsTab({ testimonials, onCreate, onUpdate, onDelete, onApprove }: Props) {
+export function TestimonialsTab({ testimonials, onCreate, onUpdate, onDelete, onApprove, canDelete = true }: Props) {
   const [modal, setModal] = useState<ModalMode>(null);
   const [editTarget, setEditTarget] = useState<Testimonial | null>(null);
   const [form, setForm] = useState<TestimonialFormData>(EMPTY_FORM);
@@ -89,12 +90,14 @@ export function TestimonialsTab({ testimonials, onCreate, onUpdate, onDelete, on
                     <Check className="w-3.5 h-3.5 text-[#28b098] group-hover:text-slate-900" />
                   </button>
                 )}
-                <button onClick={() => openEdit(t)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-[#3de0be] flex items-center justify-center transition-colors group">
+                <button onClick={() => openEdit(t)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-[#3de0be] flex items-center justify-center transition-colors group" title="Edit testimonial">
                   <Pencil className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-900" />
                 </button>
-                <button onClick={() => onDelete(t.id)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-100 flex items-center justify-center transition-colors group">
-                  <Trash2 className="w-3.5 h-3.5 text-slate-500 group-hover:text-red-600" />
-                </button>
+                {canDelete && (
+                  <button onClick={() => onDelete(t.id)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-100 flex items-center justify-center transition-colors group" title="Delete testimonial">
+                    <Trash2 className="w-3.5 h-3.5 text-slate-500 group-hover:text-red-600" />
+                  </button>
+                )}
               </div>
             </div>
           ))}

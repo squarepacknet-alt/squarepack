@@ -109,20 +109,23 @@ export default function Footer() {
           {/* Navigation Column */}
           <div className="lg:pl-8">
             <h4 className="font-bold text-[17px] text-slate-800 mb-6 font-heading uppercase tracking-wider">
-              Quick Links
+              {t('quickLinks')}
             </h4>
             <ul className="space-y-3.5">
               <li>
                 <Link href="/" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">{t('home')}</Link>
               </li>
               <li>
-                <Link href="/about-us" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">About Us</Link>
+                <Link href="/about-us" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">{t('aboutUs')}</Link>
               </li>
               <li>
-                <Link href="/products" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">Products</Link>
+                <Link href="/products" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">{t('products')}</Link>
               </li>
               <li>
-                <Link href="/contact-us" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">Contact</Link>
+                <Link href="/blog" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">{t('blog')}</Link>
+              </li>
+              <li>
+                <Link href="/contact-us" className="text-[15px] font-medium text-slate-500 hover:text-[#28b098] transition-colors">{t('contact')}</Link>
               </li>
             </ul>
           </div>
