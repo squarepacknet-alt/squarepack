@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Poppins, Cairo } from "next/font/google";
 import "../globals.css";
 
@@ -26,6 +27,9 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "SquarePack - Premium Packaging & Labeling Solutions",
   description: "Premium packaging designs and high-quality product labels.",
+  verification: {
+    google: "hBLvdKw4TaCUK6XbZ3hzn9JEqzW4vWvMsugOCs7JBs0",
+  },
 };
 
 export default async function RootLayout({
@@ -55,6 +59,24 @@ export default async function RootLayout({
       className={`${inter.variable} ${poppins.variable} ${cairo.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-HT59LR0B35"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HT59LR0B35');
+          `}
+        </Script>
+      </head>
       <body suppressHydrationWarning className={`font-sans text-body min-h-full flex flex-col bg-surface-light${isRtl ? ' font-arabic' : ''}`}>
         <NextIntlClientProvider messages={messages}>
           {children}
