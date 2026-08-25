@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Send, Check, AlertTriangle } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { API_URL } from "@/config/api";
 
 export default function ContactForm() {
   const formT = useTranslations('Contact.form');
@@ -9,15 +10,12 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const rawAPI = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-  const API = rawAPI.replace(/\/$/, "");
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setStatus("idle");
     try {
-      const res = await fetch(`${API}/api/contact`, {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)

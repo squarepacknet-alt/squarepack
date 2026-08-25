@@ -420,9 +420,10 @@ interface Props {
   onCreate: (form: ProductFormData) => Promise<boolean>;
   onUpdate: (id: string, form: ProductFormData) => Promise<boolean>;
   onDelete: (id: string) => void;
+  canDelete?: boolean;
 }
 
-export function ProductsTab({ products, onCreate, onUpdate, onDelete }: Props) {
+export function ProductsTab({ products, onCreate, onUpdate, onDelete, canDelete = true }: Props) {
   const [modal, setModal] = useState<ModalMode>(null);
   const [editTarget, setEditTarget] = useState<Product | null>(null);
   const [form, setForm] = useState<ProductFormData>(EMPTY_FORM);
@@ -499,12 +500,14 @@ export function ProductsTab({ products, onCreate, onUpdate, onDelete }: Props) {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  <button onClick={() => openEdit(p)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-[#3de0be] flex items-center justify-center transition-colors group">
+                  <button onClick={() => openEdit(p)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-[#3de0be] flex items-center justify-center transition-colors group" title="Edit product">
                     <Pencil className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-900" />
                   </button>
-                  <button onClick={() => onDelete(p.id)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-100 flex items-center justify-center transition-colors group">
-                    <Trash2 className="w-3.5 h-3.5 text-slate-500 group-hover:text-red-600" />
-                  </button>
+                  {canDelete && (
+                    <button onClick={() => onDelete(p.id)} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-100 flex items-center justify-center transition-colors group" title="Delete product">
+                      <Trash2 className="w-3.5 h-3.5 text-slate-500 group-hover:text-red-600" />
+                    </button>
+                  )}
                 </div>
               </div>
             );

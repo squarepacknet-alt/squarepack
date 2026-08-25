@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import ProductsClient from "@/components/ProductsClient";
 import BrochureButton from "@/components/brochure/BrochureButton";
 import WhatsAppButton from "@/components/whatsapp/WhatsappButton";
+import { API_URL } from "@/config/api";
 
 export async function generateMetadata({
   params,
@@ -162,9 +163,7 @@ const FALLBACK_PRODUCTS: Product[] = [
 
 async function getProducts(locale: string): Promise<Product[]> {
   try {
-    const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
-    const apiUrl = rawApiUrl.replace(/\/$/, "");
-    const res = await fetch(`${apiUrl}/api/products?lang=${locale}`, {
+    const res = await fetch(`${API_URL}/api/products?lang=${locale}`, {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("API error");

@@ -1,4 +1,6 @@
-export const API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000").replace(/\/$/, "");
+import { API_URL } from "@/config/api";
+
+export const API = API_URL;
 
 let onUnauthorized: (() => void) | null = null;
 
@@ -32,16 +34,16 @@ async function apiFetch(path: string, init?: RequestInit) {
 }
 
 // --- Auth ---
-export async function loginRequest(password: string) {
-  return apiFetch("/api/admin/login", {
+export async function loginRequest(email: string, password: string) {
+  return apiFetch("/api/auth/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ password }),
+    body: JSON.stringify({ email, password }),
   });
 }
 
-export async function validateTokenRequest() {
-  return apiFetch("/api/admin/validate", { headers: authHeaders() });
+export async function validateTokenRequest(signal?: AbortSignal) {
+  return apiFetch("/api/auth/validate", { headers: authHeaders(), signal });
 }
 
 // --- Products ---
@@ -116,5 +118,41 @@ export async function deleteInquiryRequest(id: string) {
   return apiFetch(`/api/contact/${id}`, {
     method: "DELETE",
     headers: authHeaders(),
+  });
+}
+
+// --- Blogs ---
+export async function fetchBlogsRequest() {
+  return apiFetch("/api/blogs", { headers: authHeaders() });
+}
+
+export async function createBlogRequest(data: object) {
+  return apiFetch("/api/blogs", {
+    method: "POST",
+    headers: jsonHeaders(),
+    body: JSON.stringify(data),
+  });
+}
+
+export async function updateBlogRequest(id: string, data: object) {
+  return apiFetch(`/api/blogs/${id}`, {
+    method: "PUT",
+    headers: jsonHeaders(),
+    body: JSON.stringify({ ...data, id }),
+  });
+}
+
+export async function deleteBlogRequest(id: string) {
+  return apiFetch(`/api/blogs/${id}`, {
+    method: "DELETE",
+    headers: authHeaders(),
+  });
+}
+
+export async function uploadBlogImageRequest(formData: FormData) {
+  return apiFetch("/api/blogs/upload-image", {
+    method: "POST",
+    headers: authHeaders(), // Let the browser set Content-Type for FormData
+    body: formData,
   });
 }

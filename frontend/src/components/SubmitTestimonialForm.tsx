@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { Send, Star, Check, AlertTriangle } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { API_URL } from "@/config/api";
 
-const rawAPI = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-const API = rawAPI.replace(/\/$/, "");
+const API = API_URL;
 
 export default function SubmitTestimonialForm() {
   const t = useTranslations("Testimonials.form");

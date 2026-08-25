@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import ProductDetailClient from "@/components/ProductDetailClient";
 import { notFound } from "next/navigation";
 import BrochureButton from "@/components/brochure/BrochureButton";
+import { API_URL } from "@/config/api";
 
 export async function generateMetadata({
   params,
@@ -13,10 +14,7 @@ export async function generateMetadata({
   const { locale, id } = await params;
 
   try {
-    const rawApiUrl =
-      process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-    const apiUrl = rawApiUrl.replace(/\/$/, "");
-    const res = await fetch(`${apiUrl}/api/products/${id}?lang=${locale}`, {
+    const res = await fetch(`${API_URL}/api/products/${id}?lang=${locale}`, {
       cache: "no-store",
     });
     if (res.ok) {
@@ -37,10 +35,7 @@ export async function generateMetadata({
 
 async function getProduct(locale: string, id: string) {
   try {
-    const rawApiUrl =
-      process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-    const apiUrl = rawApiUrl.replace(/\/$/, "");
-    const res = await fetch(`${apiUrl}/api/products/${id}?lang=${locale}`, {
+    const res = await fetch(`${API_URL}/api/products/${id}?lang=${locale}`, {
       cache: "no-store",
     });
     if (!res.ok) {

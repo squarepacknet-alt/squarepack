@@ -62,9 +62,30 @@ export interface Inquiry {
   created_at: string;
 }
 
-export type TabType = "products" | "testimonials" | "inquiries";
+export type TabType = "products" | "testimonials" | "inquiries" | "blogs";
 export type ModalMode = "create" | "edit" | null;
 export type ToastState = { msg: string; type: "success" | "error" } | null;
 
 export type ProductFormData = Omit<Product, "id">;
 export type TestimonialFormData = Omit<Testimonial, "id">;
+
+export type UserRole = "admin" | "editor";
+
+export interface Blog {
+  id: string;
+  title: string;
+  slug?: string | null;
+  summary?: string | null;
+  content: string;
+  cover_image: string | null;
+  author: string;
+  is_published?: boolean;
+  meta_title?: string | null;
+  meta_description?: string | null;
+  keywords?: string | null;
+  permalink?: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export type BlogFormData = Omit<Blog, "id" | "created_at" | "updated_at">;
