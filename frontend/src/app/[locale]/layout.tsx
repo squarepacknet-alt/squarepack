@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: "SquarePack - Premium Packaging & Labeling Solutions",
   description: "Premium packaging designs and high-quality product labels.",
   verification: {
-    google: "hBLvdKw4TaCUK6XbZ3hzn9JEqzW4vWvMsugOCs7JBs0",
+    google: "p8DR8jyGkfRvCAZXX6bY3RxX52ddbcbYI32wifq-f24", 
   },
 };
 

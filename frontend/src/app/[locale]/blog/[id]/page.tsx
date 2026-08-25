@@ -119,19 +119,6 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ loc
             className="blog-content font-serif text-[17px] sm:text-[18px] md:text-[19px] leading-relaxed text-slate-800 w-full"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
-
-          {blog.keywords && (
-            <div className="mt-14 pt-8 border-t border-slate-100">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Keywords & Topics</h4>
-              <div className="flex flex-wrap gap-2">
-                {blog.keywords.split(",").map((kw, i) => kw.trim() && (
-                  <span key={i} className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">
-                    #{kw.trim()}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
         </article>
       </main>
       <Footer />
