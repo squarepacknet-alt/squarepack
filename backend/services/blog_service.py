@@ -58,6 +58,7 @@ class BlogService:
             meta_description=blog.meta_description,
             keywords=blog.keywords,
             permalink=blog.permalink,
+            faqs=[faq.model_dump() for faq in blog.faqs] if blog.faqs else None,
         )
         self.db.add(db_blog)
         self.db.commit()
@@ -69,6 +70,7 @@ class BlogService:
         if not db_blog:
             raise HTTPException(status_code=404, detail="Blog not found")
 
+        # model_dump serializes BlogFAQ objects to plain dicts (JSON-safe for JSONB)
         update_data = updated_blog.model_dump(exclude_unset=True)
 
         # If title changed but slug not explicitly set, regenerate slug
@@ -77,6 +79,13 @@ class BlogService:
             update_data["slug"] = _make_unique_slug(self.db, base_slug, exclude_id=blog_id)
         elif "slug" in update_data:
             update_data["slug"] = _make_unique_slug(self.db, update_data["slug"], exclude_id=blog_id)
+
+        # Ensure faqs is stored as list of dicts (not Pydantic models)
+        if "faqs" in update_data and update_data["faqs"] is not None:
+            update_data["faqs"] = [
+                f if isinstance(f, dict) else f.model_dump()
+                for f in update_data["faqs"]
+            ]
 
         for key, value in update_data.items():
             setattr(db_blog, key, value)

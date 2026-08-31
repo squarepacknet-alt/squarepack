@@ -6,7 +6,7 @@ import {
   Upload, Eye, Trash, CheckSquare, Square, AlignLeft, AlignCenter,
   AlignRight, Maximize2, RefreshCw, Send, BookmarkCheck
 } from "lucide-react";
-import { Blog, BlogFormData, ModalMode } from "../types";
+import { Blog, BlogFAQ, BlogFormData, ModalMode } from "../types";
 import { uploadBlogImageRequest } from "../api";
 import dynamic from "next/dynamic";
 
@@ -43,11 +43,14 @@ interface TocItem {
 export function BlogsTab({ blogs, onCreate, onUpdate, onDelete, canDelete = true, showToast }: BlogsTabProps) {
   const [modalMode, setModalMode] = useState<ModalMode>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"content" | "seo" | "preview">("content");
+  const [activeTab, setActiveTab] = useState<"content" | "seo" | "faq" | "preview">("content");
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
   const [filterStatus, setFilterStatus] = useState<"all" | "published" | "draft">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // FAQ state
+  const [faqItems, setFaqItems] = useState<BlogFAQ[]>([]);
 
   // Cover image upload state
   const [isUploadingCover, setIsUploadingCover] = useState(false);
@@ -81,6 +84,7 @@ export function BlogsTab({ blogs, onCreate, onUpdate, onDelete, canDelete = true
     meta_description: "",
     keywords: "",
     permalink: "",
+    faqs: [],
   });
 
   const quillRef = useRef<any>(null);
@@ -334,18 +338,21 @@ export function BlogsTab({ blogs, onCreate, onUpdate, onDelete, canDelete = true
       content: "",
       cover_image: "",
       author: "Admin",
-      is_published: false, // Default to draft for safety
+      is_published: false,
       meta_title: "",
       meta_description: "",
       keywords: "",
       permalink: "",
+      faqs: [],
     });
+    setFaqItems([]);
     setEditingId(null);
     setActiveTab("content");
     setModalMode("create");
   };
 
   const openEdit = (b: Blog) => {
+    const existingFaqs = b.faqs ?? [];
     setFormData({
       title: b.title,
       slug: b.slug || slugify(b.title),
@@ -358,14 +365,17 @@ export function BlogsTab({ blogs, onCreate, onUpdate, onDelete, canDelete = true
       meta_description: b.meta_description || b.summary || "",
       keywords: b.keywords || "",
       permalink: b.permalink || `/blog/${b.slug || b.id}`,
+      faqs: existingFaqs,
     });
+    setFaqItems(existingFaqs);
     setEditingId(b.id);
     setActiveTab("content");
     setModalMode("edit");
   };
 
   const copySlugUrl = (slugOrId: string) => {
-    const url = `${window.location.origin}/blog/${slugOrId}`;
+    const domain = process.env.NEXT_PUBLIC_APP_URL || "https://squarepack.net";
+    const url = `${domain}/en/blog/${slugOrId}`;
     navigator.clipboard.writeText(url);
     setCopiedSlug(slugOrId);
     setTimeout(() => setCopiedSlug(null), 2000);
@@ -410,6 +420,7 @@ export function BlogsTab({ blogs, onCreate, onUpdate, onDelete, canDelete = true
         meta_title: formData.meta_title || formData.title,
         meta_description: formData.meta_description || formData.summary || "",
         permalink: formData.permalink || `/blog/${formData.slug || slugify(formData.title)}`,
+        faqs: faqItems.filter((f) => f.question.trim() && f.answer.trim()),
       };
 
       let success = false;
@@ -663,6 +674,18 @@ export function BlogsTab({ blogs, onCreate, onUpdate, onDelete, canDelete = true
                 }`}
               >
                 <Globe className="w-3.5 h-3.5" /> SEO & Permalinks
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("faq" as any)}
+                className={`py-3 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
+                  (activeTab as string) === "faq" ? "border-emerald-600 text-emerald-700" : "border-transparent text-slate-500 hover:text-slate-800"
+                }`}
+              >
+                <Sparkles className="w-3.5 h-3.5" /> FAQ
+                {faqItems.length > 0 && (
+                  <span className="ml-1 px-1.5 py-0.5 bg-emerald-100 text-emerald-700 text-[10px] font-bold rounded-full">{faqItems.length}</span>
+                )}
               </button>
               <button
                 type="button"
@@ -935,6 +958,110 @@ export function BlogsTab({ blogs, onCreate, onUpdate, onDelete, canDelete = true
                           </span>
                         ))}
                       </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* ── FAQ Tab Panel ── */}
+              {(activeTab as string) === "faq" && (
+                <div className="space-y-5">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900">Frequently Asked Questions</h3>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        FAQs are injected as FAQ Schema (JSON-LD) for SEO and displayed at the bottom of the blog post.
+                        Only headings ending with <strong>?</strong> are needed — the answer follows automatically.
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setFaqItems((prev) => [...prev, { question: "", answer: "" }])}
+                      className="flex items-center gap-1.5 px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all shadow-sm shrink-0"
+                    >
+                      <Plus className="w-3.5 h-3.5" /> Add FAQ
+                    </button>
+                  </div>
+
+                  {faqItems.length === 0 ? (
+                    <div className="py-14 border-2 border-dashed border-slate-200 rounded-2xl text-center">
+                      <Sparkles className="w-8 h-8 text-slate-300 mx-auto mb-3" />
+                      <p className="text-sm font-semibold text-slate-500">No FAQs yet</p>
+                      <p className="text-xs text-slate-400 mt-1 mb-4">Add Q&A pairs to boost your blog's SEO with FAQ Schema markup</p>
+                      <button
+                        type="button"
+                        onClick={() => setFaqItems([{ question: "", answer: "" }])}
+                        className="px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition-colors"
+                      >
+                        Add First FAQ
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {faqItems.map((faq, idx) => (
+                        <div key={idx} className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 group relative">
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">FAQ #{idx + 1}</span>
+                            <button
+                              type="button"
+                              onClick={() => setFaqItems((prev) => prev.filter((_, i) => i !== idx))}
+                              className="opacity-0 group-hover:opacity-100 p-1 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all"
+                              title="Remove FAQ"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+
+                          <div className="space-y-1.5">
+                            <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                              <span className="w-4 h-4 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center text-[9px] font-black">Q</span>
+                              Question
+                            </label>
+                            <input
+                              type="text"
+                              value={faq.question}
+                              onChange={(e) => setFaqItems((prev) => prev.map((f, i) => i === idx ? { ...f, question: e.target.value } : f))}
+                              placeholder="e.g. What types of labels do you offer?"
+                              className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-emerald-500 transition-all"
+                            />
+                            {faq.question && !faq.question.trim().endsWith("?") && (
+                              <p className="text-[11px] text-amber-600 font-medium">💡 Tip: End with a "?" for FAQ Schema to activate</p>
+                            )}
+                          </div>
+
+                          <div className="space-y-1.5">
+                            <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                              <span className="w-4 h-4 rounded bg-blue-100 text-blue-700 flex items-center justify-center text-[9px] font-black">A</span>
+                              Answer
+                            </label>
+                            <textarea
+                              rows={3}
+                              value={faq.answer}
+                              onChange={(e) => setFaqItems((prev) => prev.map((f, i) => i === idx ? { ...f, answer: e.target.value } : f))}
+                              placeholder="Provide a clear, concise answer..."
+                              className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-emerald-500 transition-all resize-none"
+                            />
+                          </div>
+                        </div>
+                      ))}
+
+                      <button
+                        type="button"
+                        onClick={() => setFaqItems((prev) => [...prev, { question: "", answer: "" }])}
+                        className="w-full py-2.5 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 text-xs font-bold hover:border-emerald-300 hover:text-emerald-700 hover:bg-emerald-50/40 transition-all"
+                      >
+                        + Add Another FAQ
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Schema preview hint */}
+                  {faqItems.filter(f => f.question.trim().endsWith("?") && f.answer.trim()).length > 0 && (
+                    <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl">
+                      <p className="text-xs font-bold text-emerald-800 mb-1">✅ FAQ Schema will be injected</p>
+                      <p className="text-[11px] text-emerald-700">
+                        {faqItems.filter(f => f.question.trim().endsWith("?") && f.answer.trim()).length} valid FAQ{faqItems.filter(f => f.question.trim().endsWith("?") && f.answer.trim()).length > 1 ? "s" : ""} will be included in the <code className="bg-emerald-100 px-1 rounded">FAQPage</code> JSON-LD schema for rich search results.
+                      </p>
                     </div>
                   )}
                 </div>

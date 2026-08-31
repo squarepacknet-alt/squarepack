@@ -1,5 +1,5 @@
 from db.database import Base
-from sqlalchemy import Column, String, Text, DateTime, Boolean
+from sqlalchemy import Column, String, Text, DateTime, Boolean, JSON
 import datetime
 import uuid
 
@@ -18,5 +18,6 @@ class DBBlog(Base):
     meta_description = Column(Text, nullable=True)
     keywords = Column(String, nullable=True)  # comma-separated keywords
     permalink = Column(String, nullable=True)
+    faqs = Column(JSON, nullable=True)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)

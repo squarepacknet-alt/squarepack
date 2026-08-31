@@ -85,6 +85,7 @@ export default function Navbar() {
     { href: "/about-us", label: t("about") },
     { href: "/products", label: t("products") },
     { href: "/industries", label: t("industries") },
+    { href: "/blog", label: t("blog") },
     { href: "/testimonials", label: t("testimonials") },
     { href: "/contact-us", label: t("contact") },
   ] as const;
@@ -217,6 +218,7 @@ export default function Navbar() {
               width={40}
               height={40}
               className="h-10 w-auto"
+              style={{ width: "auto", height: "auto" }}
               priority
             />
             <Image
@@ -225,6 +227,8 @@ export default function Navbar() {
               width={120}
               height={32}
               className={`sm:block h-8 w-auto object-contain transition-all duration-300 ${isOverDark ? "brightness-0 invert" : ""}`}
+              style={{ width: "auto", height: "auto" }}
+              loading="eager"
             />
           </Link>
 

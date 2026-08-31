@@ -71,6 +71,11 @@ export type TestimonialFormData = Omit<Testimonial, "id">;
 
 export type UserRole = "admin" | "editor";
 
+export interface BlogFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Blog {
   id: string;
   title: string;
@@ -84,6 +89,7 @@ export interface Blog {
   meta_description?: string | null;
   keywords?: string | null;
   permalink?: string | null;
+  faqs?: BlogFAQ[] | null;
   created_at: string;
   updated_at: string;
 }

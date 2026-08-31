@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
-import { Blog } from "@/components/admin/types";
+import { Blog, BlogFAQ } from "@/components/admin/types";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";
@@ -10,14 +10,10 @@ const API = API_URL;
 
 async function getBlog(slugOrId: string): Promise<Blog | null> {
   try {
-    // Try fetching by slug first
     let res = await fetch(`${API}/api/blogs/slug/${slugOrId}`, { cache: "no-store" });
     if (res.ok) return res.json();
-
-    // Fallback to fetch by ID
     res = await fetch(`${API}/api/blogs/${slugOrId}`, { cache: "no-store" });
     if (res.ok) return res.json();
-
     return null;
   } catch (err) {
     return null;
@@ -59,6 +55,23 @@ export async function generateMetadata({
   };
 }
 
+function buildFAQSchema(faqs: BlogFAQ[]) {
+  const validFaqs = faqs.filter((f) => f.question?.trim().endsWith("?") && f.answer?.trim());
+  if (validFaqs.length === 0) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: validFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.question.trim(),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer.trim(),
+      },
+    })),
+  };
+}
+
 export default async function SingleBlogPage({ params }: { params: Promise<{ locale: string; id: string }> }) {
   const resolvedParams = await params;
   setRequestLocale(resolvedParams.locale);
@@ -68,8 +81,17 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ loc
     notFound();
   }
 
+  const faqs: BlogFAQ[] = Array.isArray(blog.faqs) ? blog.faqs : [];
+  const faqSchema = faqs.length > 0 ? buildFAQSchema(faqs) : null;
+
   return (
     <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <Navbar />
       <main className="min-h-screen bg-white font-sans pt-32 sm:pt-36 md:pt-44 pb-24 px-4 sm:px-6 lg:px-8 w-full overflow-x-hidden">
         <article className="max-w-3xl mx-auto w-full">
@@ -107,22 +129,51 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ loc
 
           {blog.cover_image && (
             <div className="mb-12 sm:mb-14 rounded-2xl overflow-hidden shadow-sm border border-slate-100 bg-slate-50">
-              <img 
-                src={blog.cover_image} 
+              <img
+                src={blog.cover_image}
                 alt={blog.title}
                 className="w-full max-h-[520px] object-cover"
               />
             </div>
           )}
 
-          <div 
+          <div
             className="blog-content font-serif text-[17px] sm:text-[18px] md:text-[19px] leading-relaxed text-slate-800 w-full"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
+
+          {/* ── FAQ Section ── */}
+          {faqs.length > 0 && (
+            <section className="mt-16 pt-10 border-t border-slate-100">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="w-1 h-6 bg-[#26D0A8] rounded-full inline-block" />
+                <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <details
+                    key={i}
+                    className="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden open:border-[#26D0A8]/40 transition-all"
+                  >
+                    <summary className="flex items-center justify-between px-5 py-4 cursor-pointer list-none select-none font-semibold text-slate-900 text-sm sm:text-base hover:bg-slate-100/60 transition-colors gap-3">
+                      <span>{faq.question}</span>
+                      <span className="shrink-0 w-5 h-5 rounded-full bg-slate-200 group-open:bg-[#26D0A8] flex items-center justify-center transition-colors text-slate-600 group-open:text-white text-xs font-black">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-5 pb-5 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
         </article>
       </main>
       <Footer />
     </>
   );
 }
-

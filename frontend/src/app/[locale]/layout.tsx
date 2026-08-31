@@ -27,6 +27,7 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "SquarePack - Premium Packaging & Labeling Solutions",
   description: "Premium packaging designs and high-quality product labels.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://squarepack.net"),
   verification: {
     google: "p8DR8jyGkfRvCAZXX6bY3RxX52ddbcbYI32wifq-f24", 
   },
