@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useCallback } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import AppButton from './appButton/AppButton';
+import { useEffect, useState, useCallback } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import AppButton from "./appButton/AppButton";
 
 const slides = [
   {
-    id: 'c1',
-    image: '/images/product-1.png',
-    label: 'All types of products',
+    id: "c1",
+    image: "/images/carousel_1.png",
+    label: "All types of products",
   },
   {
-    id: 'c2',
-    image: '/images/industrial_hero.png',
-    label: 'Industrial Shipping',
+    id: "c2",
+    image: "/images/industrial_hero.png",
+    label: "Industrial Shipping",
   },
-  { id: 'c3', image: '/images/barrels_hero.png', label: 'Pallet Bands' },
-  { id: 'c4', image: '/images/security_hero.png', label: 'Electronics' },
+  { id: "c3", image: "/images/barrels_hero.png", label: "Pallet Bands" },
+  { id: "c4", image: "/images/security_hero.png", label: "Electronics" },
   // { id: 'c5', image: '/images/ribon_hero.png', label: 'Retail Packaging' },
-  { id: 'c6', image: '/images/perfume__hero.png', label: 'Luxury Brands' },
+  { id: "c6", image: "/images/perfume__hero.png", label: "Luxury Brands" },
 ];
 
 function mod(n: number, m: number) {
@@ -29,7 +29,7 @@ function mod(n: number, m: number) {
 }
 
 export default function Hero() {
-  const t = useTranslations('Hero');
+  const t = useTranslations("Hero");
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const total = slides.length;
@@ -50,9 +50,9 @@ export default function Hero() {
   }, [isPaused, goNext]);
 
   const stats = [
-    { value: t('stats.projects.value'), label: t('stats.projects.label') },
-    { value: t('stats.clients.value'), label: t('stats.clients.label') },
-    { value: t('stats.experience.value'), label: t('stats.experience.label') },
+    { value: t("stats.projects.value"), label: t("stats.projects.label") },
+    { value: t("stats.clients.value"), label: t("stats.clients.label") },
+    { value: t("stats.experience.value"), label: t("stats.experience.label") },
   ];
 
   return (
@@ -89,7 +89,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.60) 30%, rgba(0,0,0,0.25) 60%, transparent 100%)',
+            "linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.60) 30%, rgba(0,0,0,0.25) 60%, transparent 100%)",
         }}
       />
 
@@ -98,7 +98,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.20) 25%, transparent 55%)',
+            "linear-gradient(to top, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.20) 25%, transparent 55%)",
         }}
       />
 
@@ -107,7 +107,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, transparent 20%)',
+            "linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, transparent 20%)",
         }}
       />
 
@@ -116,8 +116,8 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px)',
-          backgroundSize: '70px 70px',
+            "linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px)",
+          backgroundSize: "70px 70px",
         }}
       />
 
@@ -145,7 +145,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.1 }}
               className="font-heading font-black text-white leading-[1.02] tracking-tight text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-[3.8rem] mb-6"
-              style={{ textShadow: '0 2px 24px rgba(0,0,0,0.45)' }}
+              style={{ textShadow: "0 2px 24px rgba(0,0,0,0.45)" }}
             >
               Packaging That
               <br />
@@ -160,9 +160,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.22 }}
               className="text-white/75 text-[15.5px] leading-[1.75] max-w-[420px] mb-9"
-              style={{ textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
             >
-              {t('description')}
+              {t("description")}
             </motion.p>
 
             {/* CTAs */}
@@ -173,12 +173,12 @@ export default function Hero() {
               className="flex items-center gap-4 mb-12"
             >
               <AppButton href="/contact-us">
-                {t('getStarted')}
+                {t("getStarted")}
                 <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
               </AppButton>
               {/* Outlined button needs a white variant on dark bg */}
               <AppButton isOutlined={true} href="/products">
-                {t('viewWork')}
+                {t("viewWork")}
                 <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
               </AppButton>
             </motion.div>
@@ -217,7 +217,7 @@ export default function Hero() {
           {/* Active slide label */}
           <AnimatePresence mode="wait">
             <motion.div
-              key={slides[active].id + '-label'}
+              key={slides[active].id + "-label"}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
@@ -257,7 +257,7 @@ export default function Hero() {
                     width: i === active ? 24 : 6,
                     opacity: i === active ? 1 : 0.3,
                   }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   aria-label={`Go to slide ${i + 1}`}
                   className="h-[5px] rounded-full bg-[#26D0A8]"
                 />
@@ -278,10 +278,10 @@ export default function Hero() {
             {/* Counter */}
             <p className="text-white/40 text-[11px] font-semibold tracking-[0.22em] uppercase ml-1">
               <span className="text-white font-bold">
-                {String(active + 1).padStart(2, '0')}
+                {String(active + 1).padStart(2, "0")}
               </span>
-              {' / '}
-              {String(total).padStart(2, '0')}
+              {" / "}
+              {String(total).padStart(2, "0")}
             </p>
           </div>
         </div>

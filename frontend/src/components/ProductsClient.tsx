@@ -209,7 +209,7 @@ export default function ProductsClient({
 
       {/* ── Video Section ── */}
       <section className="container pt-16 pb-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -237,7 +237,9 @@ export default function ProductsClient({
               >
                 <div className="inline-flex items-center gap-2 bg-[#3de0be]/20 px-4 py-1.5 rounded-full mb-4 border border-[#3de0be]/30">
                   <div className="w-2 h-2 rounded-full bg-[#3de0be] animate-pulse" />
-                  <span className="text-[#3de0be] font-bold tracking-[0.2em] uppercase text-xs">Product Preview</span>
+                  <span className="text-[#3de0be] font-bold tracking-[0.2em] uppercase text-xs">
+                    Product Preview
+                  </span>
                 </div>
                 <h2 className="text-4xl md:text-6xl font-heading font-black text-white tracking-tight drop-shadow-lg">
                   Coming Soon
@@ -261,10 +263,11 @@ export default function ProductsClient({
                   <button
                     key={tab.id}
                     onClick={() => handleTabChange(tab.id)}
-                    className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-[13.5px] font-bold transition-all duration-300 ${isActive
-                      ? "bg-slate-900 text-white shadow-lg"
-                      : "bg-white text-slate-500 hover:text-slate-700 hover:bg-slate-50 border border-slate-200"
-                      }`}
+                    className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-[13.5px] font-bold transition-all duration-300 ${
+                      isActive
+                        ? "bg-slate-900 text-white shadow-lg"
+                        : "bg-white text-slate-500 hover:text-slate-700 hover:bg-slate-50 border border-slate-200"
+                    }`}
                   >
                     <Icon
                       className={`w-4 h-4 ${isActive ? "text-[#3de0be]" : "text-slate-400"}`}
@@ -329,7 +332,12 @@ export default function ProductsClient({
                   animate={{ opacity: 1 }}
                   className="mt-12"
                 >
-                  <AppButton isDark={true} onClick={() => setVisibleCount((prev) => prev + 10)}>Load More</AppButton>
+                  <AppButton
+                    isDark={true}
+                    onClick={() => setVisibleCount((prev) => prev + 10)}
+                  >
+                    Load More
+                  </AppButton>
                 </motion.div>
               )}
             </motion.div>
